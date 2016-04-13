@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    
+    <url>
+     <loc>https://foreachsam.github.io/book-util-gsettings/book/</loc>
+     <lastmod>2016-04-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+        
+    <url>
+     <loc>https://foreachsam.github.io/book-util-gsettings/book/content/referance/manual/</loc>
+     <lastmod>2016-04-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>https://foreachsam.github.io/book-util-gsettings/book/content/deb-package/</loc>
+     <lastmod>2016-04-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://foreachsam.github.io/book-util-gsettings/book/content/deb-package/libglib2.0-bin/</loc>
+     <lastmod>2016-04-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://foreachsam.github.io/book-util-gsettings/book/content/deb-package/libglib2.0-doc/</loc>
+     <lastmod>2016-04-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>https://foreachsam.github.io/book-util-gsettings/book/content/command/gsettings/</loc>
+     <lastmod>2016-04-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+</urlset>

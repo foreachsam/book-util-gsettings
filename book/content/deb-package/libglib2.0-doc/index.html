@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="no-js ie6"><![endif]-->
+<!--[if IE 7 ]><html class="no-js ie7"><![endif]-->
+<!--[if IE 8 ]><html class="no-js ie8"><![endif]-->
+<!--[if IE 9 ]><html class="no-js ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    
+      
+        <title>libglib2.0-doc - Gsettings 使用筆記</title>
+      
+      
+      
+        <link rel="canonical" href="https://foreachsam.github.io/book-util-gsettings/book/content/deb-package/libglib2.0-doc/">
+      
+      
+        <meta name="author" content="foreachsam">
+      
+    
+    <meta property="og:url" content="https://foreachsam.github.io/book-util-gsettings/book/content/deb-package/libglib2.0-doc/">
+    <meta property="og:title" content="Gsettings 使用筆記">
+    <meta property="og:image" content="https://foreachsam.github.io/book-util-gsettings/book/content/deb-package/libglib2.0-doc//../../../">
+    <meta name="apple-mobile-web-app-title" content="Gsettings 使用筆記">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="../../../assets/images/favicon-e565ddfa3b.ico">
+    <link rel="icon" type="image/x-icon" href="../../../assets/images/favicon-e565ddfa3b.ico">
+    <style>
+      @font-face {
+      	font-family: 'Icon';
+      	src: url('../../../assets/fonts/icon.eot?52m981');
+      	src: url('../../../assets/fonts/icon.eot?#iefix52m981')
+               format('embedded-opentype'),
+      		   url('../../../assets/fonts/icon.woff?52m981')
+               format('woff'),
+      		   url('../../../assets/fonts/icon.ttf?52m981')
+               format('truetype'),
+      		   url('../../../assets/fonts/icon.svg?52m981#icon')
+               format('svg');
+      	font-weight: normal;
+      	font-style: normal;
+      }
+    </style>
+    <link rel="stylesheet" href="../../../assets/stylesheets/application-b64b728552.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/palettes-05ab2406df.css">
+    
+    
+      
+      
+      
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Mono">
+      <style>
+        body, input {
+          font-family: 'Roboto', Helvetica, Arial, sans-serif;
+        }
+        pre, code {
+          font-family: 'Roboto Mono', 'Courier New', 'Courier', monospace;
+        }
+      </style>
+    
+    
+    <script src="../../../assets/javascripts/modernizr-4ab42b99fd.js"></script>
+    
+  </head>
+  
+  
+  
+  <body class="palette-primary-green palette-accent-light-green">
+    
+    <div class="backdrop">
+      <div class="backdrop-paper"></div>
+    </div>
+    <input class="toggle" type="checkbox" id="toggle-drawer">
+    <input class="toggle" type="checkbox" id="toggle-search">
+    <label class="toggle-button overlay" for="toggle-drawer"></label>
+    <header class="header">
+      <nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        
+          <span class="path">
+            
+              
+                deb package <i class="icon icon-link"></i>
+              
+            
+          </span>
+        
+        libglib2.0-doc
+      </div>
+    </div>
+    
+    
+      
+      <div class="button button-github" role="button" aria-label="GitHub">
+        <a href="https://github.com/foreachsam/book-util-gsettings" title="@foreachsam/book-util-gsettings on GitHub" target="_blank" class="toggle-button icon icon-github"></a>
+      </div>
+    
+    <div class="button button-search" role="button" aria-label="Search">
+      <label class="toggle-button icon icon-search" title="Search" for="toggle-search"></label>
+    </div>
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" aria-label="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+    </header>
+    <main class="main">
+      
+      <div class="drawer">
+        <nav aria-label="Navigation">
+  
+  <a href="/" class="project">
+    <div class="banner">
+      
+      <div class="name">
+        <strong>Gsettings 使用筆記 </strong>
+        
+      </div>
+    </div>
+  </a>
+  <div class="scrollable">
+    <div class="wrapper">
+      
+      <div class="toc">
+        <ul>
+          
+            
+  <li>
+    <a class="" title="首頁" href="../../..">
+      首頁
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <span class="section">參考文件</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="manual" href="../../referance/manual/">
+      manual
+    </a>
+    
+  </li>
+
+      
+    </ul>
+  </li>
+
+          
+            
+  <li>
+    <span class="section">deb package</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="index" href="../">
+      index
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="libglib2.0-bin" href="../libglib2.0-bin/">
+      libglib2.0-bin
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="current" title="libglib2.0-doc" href="./">
+      libglib2.0-doc
+    </a>
+    
+      
+        
+      
+      
+        <ul>
+          
+            <li class="anchor">
+              <a title="下載套件" href="#_1">
+                下載套件
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="解開套件" href="#_2">
+                解開套件
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="觀看資料夾結構" href="#_3">
+                觀看資料夾結構
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="瀏覽器觀看文件" href="#_4">
+                瀏覽器觀看文件
+              </a>
+            </li>
+          
+        </ul>
+      
+    
+  </li>
+
+      
+    </ul>
+  </li>
+
+          
+            
+  <li>
+    <span class="section">command</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="gsettings" href="../../command/gsettings/">
+      gsettings
+    </a>
+    
+  </li>
+
+      
+    </ul>
+  </li>
+
+          
+        </ul>
+        
+          <hr>
+          <span class="section">The author</span>
+          <ul>
+            
+            
+              
+              <li>
+                <a href="https://github.com/foreachsam/book-util-gsettings" target="_blank" title="@foreachsam/book-util-gsettings on GitHub">
+                  @foreachsam/book-util-gsettings on GitHub
+                </a>
+              </li>
+            
+          </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+      </div>
+      <article class="article">
+        <div class="wrapper">
+          
+          <h1 id="libglib20-doc">libglib2.0-doc 套件探索</h1>
+<h2 id="_1">下載套件</h2>
+<p>下載「<a href="http://packages.ubuntu.com/trusty/libglib2.0-doc">libglib2.0-doc</a>」這個套件。</p>
+<pre class="code"><code class="language-sh">$ apt-get download libglib2.0-doc</code></pre>
+
+
+<h2 id="_2">解開套件</h2>
+<p>解開「libglib2.0-doc_2.40.2-0ubuntu1_all.deb」</p>
+<pre class="code"><code>$ dpkg -x libglib2.0-doc_2.40.2-0ubuntu1_all.deb libglib2.0-doc</code></pre>
+
+
+<h2 id="_3">觀看資料夾結構</h2>
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ tree libglib2.0-doc</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>libglib2.0-doc
+└── usr
+    └── share
+        ├── doc
+        │   └── libglib2.0-doc
+        │       ├── AUTHORS
+        │       ├── changelog.Debian.gz
+        │       ├── copyright
+        │       ├── gdbus-object-manager-example
+        │       │   ├── ch01.html
+        │       │   ├── ExampleAnimal.html
+        │       │   ├── ExampleCat.html
+        │       │   ├── ExampleObject.html
+        │       │   ├── ExampleObjectManagerClient.html
+        │       │   ├── gdbus-object-manager-example.devhelp2.gz
+        │       │   ├── home.png
+        │       │   ├── index.html
+        │       │   ├── index.sgml
+        │       │   ├── left-insensitive.png
+        │       │   ├── left.png
+        │       │   ├── pt01.html
+        │       │   ├── right-insensitive.png
+        │       │   ├── right.png
+        │       │   ├── style.css
+        │       │   ├── up-insensitive.png
+        │       │   └── up.png
+        │       ├── gio
+        │       │   ├── annotation-glossary.html
+        │       │   ├── api-index-2-18.html
+        │       │   ├── api-index-2-20.html
+        │       │   ├── api-index-2-22.html
+        │       │   ├── api-index-2-24.html
+        │       │   ├── api-index-2-26.html
+        │       │   ├── api-index-2-28.html
+        │       │   ├── api-index-2-30.html
+        │       │   ├── api-index-2-32.html
+        │       │   ├── api-index-2-34.html
+        │       │   ├── api-index-2-36.html
+        │       │   ├── api-index-2-38.html
+        │       │   ├── api-index-2-40.html
+        │       │   ├── api-index-deprecated.html
+        │       │   ├── api-index-full.html
+        │       │   ├── application.html
+        │       │   ├── async.html
+        │       │   ├── ch01.html
+        │       │   ├── ch02.html
+        │       │   ├── ch03.html
+        │       │   ├── ch30.html
+        │       │   ├── ch31.html
+        │       │   ├── ch31s02.html
+        │       │   ├── ch31s03.html
+        │       │   ├── ch32.html
+        │       │   ├── ch32s02.html
+        │       │   ├── ch32s03.html
+        │       │   ├── ch32s04.html
+        │       │   ├── ch32s05.html
+        │       │   ├── ch32s06.html
+        │       │   ├── ch32s07.html
+        │       │   ├── ch33.html
+        │       │   ├── ch33s02.html
+        │       │   ├── ch33s03.html
+        │       │   ├── ch33s04.html
+        │       │   ├── ch33s05.html
+        │       │   ├── conversion.html
+        │       │   ├── ExampleAnimal.html
+        │       │   ├── ExampleCat.html
+        │       │   ├── ExampleObject.html
+        │       │   ├── ExampleObjectManagerClient.html
+        │       │   ├── extending-gio.html
+        │       │   ├── extending.html
+        │       │   ├── failable_initialization.html
+        │       │   ├── file_mon.html
+        │       │   ├── file_ops.html
+        │       │   ├── GActionGroup.html
+        │       │   ├── GAction.html
+        │       │   ├── GActionMap.html
+        │       │   ├── GAppInfo.html
+        │       │   ├── GAppInfoMonitor.html
+        │       │   ├── GApplicationCommandLine.html
+        │       │   ├── GApplication.html
+        │       │   ├── gapplication-tool.html
+        │       │   ├── GAsyncInitable.html
+        │       │   ├── GAsyncResult.html
+        │       │   ├── GBufferedInputStream.html
+        │       │   ├── GBufferedOutputStream.html
+        │       │   ├── GCancellable.html
+        │       │   ├── GCharsetConverter.html
+        │       │   ├── GConverter.html
+        │       │   ├── GCredentials.html
+        │       │   ├── GDataInputStream.html
+        │       │   ├── GDataOutputStream.html
+        │       │   ├── GDBusActionGroup.html
+        │       │   ├── GDBusAuthObserver.html
+        │       │   ├── gdbus-codegen.html
+        │       │   ├── GDBusConnection.html
+        │       │   ├── gdbus-convenience.html
+        │       │   ├── gdbus.html
+        │       │   ├── GDBusInterface.html
+        │       │   ├── GDBusInterfaceSkeleton.html
+        │       │   ├── gdbus-lowlevel.html
+        │       │   ├── GDBusMenuModel.html
+        │       │   ├── GDBusMessage.html
+        │       │   ├── GDBusMethodInvocation.html
+        │       │   ├── GDBusObject.html
+        │       │   ├── GDBusObjectManagerClient.html
+        │       │   ├── GDBusObjectManager.html
+        │       │   ├── GDBusObjectManagerServer.html
+        │       │   ├── GDBusObjectProxy.html
+        │       │   ├── GDBusObjectSkeleton.html
+        │       │   ├── gdbus-org.gtk.GDBus.Example.ObjectManager.Animal.html
+        │       │   ├── gdbus-org.gtk.GDBus.Example.ObjectManager.Cat.html
+        │       │   ├── GDBusProxy.html
+        │       │   ├── GDBusServer.html
+        │       │   ├── GDrive.html
+        │       │   ├── GEmblemedIcon.html
+        │       │   ├── GEmblem.html
+        │       │   ├── GFileDescriptorBased.html
+        │       │   ├── GFileEnumerator.html
+        │       │   ├── GFile.html
+        │       │   ├── GFileIcon.html
+        │       │   ├── GFileInfo.html
+        │       │   ├── GFileInputStream.html
+        │       │   ├── GFileIOStream.html
+        │       │   ├── GFileMonitor.html
+        │       │   ├── GFilenameCompleter.html
+        │       │   ├── GFileOutputStream.html
+        │       │   ├── GFilterInputStream.html
+        │       │   ├── GFilterOutputStream.html
+        │       │   ├── GIcon.html
+        │       │   ├── GInetAddress.html
+        │       │   ├── GInetSocketAddress.html
+        │       │   ├── GInitable.html
+        │       │   ├── GInputStream.html
+        │       │   ├── gio-D-Bus-Addresses.html
+        │       │   ├── gio-D-Bus-Introspection-Data.html
+        │       │   ├── gio-D-Bus-Utilities.html
+        │       │   ├── gio-Desktop-file-based-GAppInfo.html
+        │       │   ├── gio.devhelp2.gz
+        │       │   ├── gio-Extension-Points.html
+        │       │   ├── gio-GActionGroup-exporter.html
+        │       │   ├── gio-GBytesIcon.html
+        │       │   ├── gio-GContentType.html
+        │       │   ├── gio-GConverterInputstream.html
+        │       │   ├── gio-GConverterOutputstream.html
+        │       │   ├── gio-GDBusError.html
+        │       │   ├── gio-GFileAttribute.html
+        │       │   ├── gio-GInetAddressMask.html
+        │       │   ├── gio-GIOError.html
+        │       │   ├── gio-GIOScheduler.html
+        │       │   ├── gio-GMenuModel-exporter.html
+        │       │   ├── gio-gnetworking.h.html
+        │       │   ├── gio-GNotification.html
+        │       │   ├── gio-gpollableutils.html
+        │       │   ├── gio-GPropertyAction.html
+        │       │   ├── gio-GResource.html
+        │       │   ├── gio-GSettingsSchema-GSettingsSchemaSource.html
+        │       │   ├── gio-GSubprocessLauncher.html
+        │       │   ├── gio-GWin32InputStream.html
+        │       │   ├── gio-GWin32OutputStream.html
+        │       │   ├── gio-hierarchy.html
+        │       │   ├── GIOModule.html
+        │       │   ├── gio-Owning-Bus-Names.html
+        │       │   ├── gio-querymodules.html
+        │       │   ├── GIOStream.html
+        │       │   ├── gio-TLS-Overview.html
+        │       │   ├── gio-Unix-Mounts.html
+        │       │   ├── gio-Watching-Bus-Names.html
+        │       │   ├── glib-compile-resources.html
+        │       │   ├── glib-compile-schemas.html
+        │       │   ├── GLoadableIcon.html
+        │       │   ├── GMemoryInputStream.html
+        │       │   ├── GMemoryOutputStream.html
+        │       │   ├── GMenu.html
+        │       │   ├── GMenuModel.html
+        │       │   ├── GMount.html
+        │       │   ├── GMountOperation.html
+        │       │   ├── GNetworkAddress.html
+        │       │   ├── GNetworkMonitor.html
+        │       │   ├── GNetworkService.html
+        │       │   ├── GOutputStream.html
+        │       │   ├── GPermission.html
+        │       │   ├── GPollableInputStream.html
+        │       │   ├── GPollableOutputStream.html
+        │       │   ├── GProxyAddress.html
+        │       │   ├── GProxy.html
+        │       │   ├── GProxyResolver.html
+        │       │   ├── GRemoteActionGroup.html
+        │       │   ├── GResolver.html
+        │       │   ├── gresource-tool.html
+        │       │   ├── GSeekable.html
+        │       │   ├── GSettingsBackend.html
+        │       │   ├── GSettings.html
+        │       │   ├── gsettings-tool.html
+        │       │   ├── GSimpleActionGroup.html
+        │       │   ├── GSimpleAction.html
+        │       │   ├── GSimpleAsyncResult.html
+        │       │   ├── GSimplePermission.html
+        │       │   ├── GSimpleProxyResolver.html
+        │       │   ├── GSocketAddress.html
+        │       │   ├── GSocketClient.html
+        │       │   ├── GSocketConnectable.html
+        │       │   ├── GSocketConnection.html
+        │       │   ├── GSocketControlMessage.html
+        │       │   ├── GSocket.html
+        │       │   ├── GSocketListener.html
+        │       │   ├── GSocketService.html
+        │       │   ├── GSrvTarget.html
+        │       │   ├── GSubprocess.html
+        │       │   ├── GTask.html
+        │       │   ├── GTcpConnection.html
+        │       │   ├── GTcpWrapperConnection.html
+        │       │   ├── GTestDBus.html
+        │       │   ├── GThemedIcon.html
+        │       │   ├── GThreadedSocketService.html
+        │       │   ├── GTlsBackend.html
+        │       │   ├── GTlsCertificate.html
+        │       │   ├── GTlsClientConnection.html
+        │       │   ├── GTlsConnection.html
+        │       │   ├── GTlsDatabase.html
+        │       │   ├── GTlsFileDatabase.html
+        │       │   ├── GTlsInteraction.html
+        │       │   ├── GTlsPassword.html
+        │       │   ├── GTlsServerConnection.html
+        │       │   ├── GUnixConnection.html
+        │       │   ├── GUnixCredentialsMessage.html
+        │       │   ├── GUnixFDList.html
+        │       │   ├── GUnixFDMessage.html
+        │       │   ├── GUnixInputStream.html
+        │       │   ├── GUnixOutputStream.html
+        │       │   ├── GUnixSocketAddress.html
+        │       │   ├── GVfs.html
+        │       │   ├── gvfs-overview.png
+        │       │   ├── GVolume.html
+        │       │   ├── GVolumeMonitor.html
+        │       │   ├── GZlibCompressor.html
+        │       │   ├── GZlibDecompressor.html
+        │       │   ├── highlevel-socket.html
+        │       │   ├── home.png
+        │       │   ├── icons.html
+        │       │   ├── index.html
+        │       │   ├── index.sgml
+        │       │   ├── left-insensitive.png
+        │       │   ├── left.png
+        │       │   ├── menu-example.png
+        │       │   ├── menu-model.png
+        │       │   ├── migrating.html
+        │       │   ├── networking.html
+        │       │   ├── permissions.html
+        │       │   ├── pt01.html
+        │       │   ├── pt02.html
+        │       │   ├── resolver.html
+        │       │   ├── resources.html
+        │       │   ├── right-insensitive.png
+        │       │   ├── right.png
+        │       │   ├── running-gio-apps.html
+        │       │   ├── settings.html
+        │       │   ├── streaming.html
+        │       │   ├── style.css
+        │       │   ├── subprocesses.html
+        │       │   ├── testing.html
+        │       │   ├── tls.html
+        │       │   ├── tools.html
+        │       │   ├── types.html
+        │       │   ├── up-insensitive.png
+        │       │   ├── up.png
+        │       │   ├── utils.html
+        │       │   └── volume_mon.html
+        │       ├── glib
+        │       │   ├── annotation-glossary.html
+        │       │   ├── api-index-2-10.html
+        │       │   ├── api-index-2-12.html
+        │       │   ├── api-index-2-14.html
+        │       │   ├── api-index-2-16.html
+        │       │   ├── api-index-2-18.html
+        │       │   ├── api-index-2-20.html
+        │       │   ├── api-index-2-22.html
+        │       │   ├── api-index-2-24.html
+        │       │   ├── api-index-2-26.html
+        │       │   ├── api-index-2-28.html
+        │       │   ├── api-index-2-2.html
+        │       │   ├── api-index-2-30.html
+        │       │   ├── api-index-2-32.html
+        │       │   ├── api-index-2-34.html
+        │       │   ├── api-index-2-36.html
+        │       │   ├── api-index-2-38.html
+        │       │   ├── api-index-2-40.html
+        │       │   ├── api-index-2-4.html
+        │       │   ├── api-index-2-6.html
+        │       │   ├── api-index-2-8.html
+        │       │   ├── api-index-deprecated.html
+        │       │   ├── api-index-full.html
+        │       │   ├── deprecated.html
+        │       │   ├── file-name-encodings.png
+        │       │   ├── glib-Arrays.html
+        │       │   ├── glib-Asynchronous-Queues.html
+        │       │   ├── glib-Atomic-Operations.html
+        │       │   ├── glib-Automatic-String-Completion.html
+        │       │   ├── glib-Balanced-Binary-Trees.html
+        │       │   ├── glib-Base64-Encoding.html
+        │       │   ├── glib-Basic-Types.html
+        │       │   ├── glib-Bookmark-file-parser.html
+        │       │   ├── glib-building.html
+        │       │   ├── glib-Byte-Arrays.html
+        │       │   ├── glib-Byte-Order-Macros.html
+        │       │   ├── glib-Caches.html
+        │       │   ├── glib-changes.html
+        │       │   ├── glib-Character-Set-Conversion.html
+        │       │   ├── glib-Commandline-option-parser.html
+        │       │   ├── glib-compiling.html
+        │       │   ├── glib-core.html
+        │       │   ├── glib-cross-compiling.html
+        │       │   ├── glib-Data-Checksums.html
+        │       │   ├── glib-Data-HMACs.html
+        │       │   ├── glib-Datasets.html
+        │       │   ├── glib-data-types.html
+        │       │   ├── glib-Date-and-Time-Functions.html
+        │       │   ├── glib-Deprecated-Thread-APIs.html
+        │       │   ├── glib.devhelp2.gz
+        │       │   ├── glib-Double-ended-Queues.html
+        │       │   ├── glib-Doubly-Linked-Lists.html
+        │       │   ├── glib-Dynamic-Loading-of-Modules.html
+        │       │   ├── glib-Error-Reporting.html
+        │       │   ├── glib-File-Utilities.html
+        │       │   ├── glib-fundamentals.html
+        │       │   ├── glib-GDateTime.html
+        │       │   ├── glib-gettextize.html
+        │       │   ├── glib-Glob-style-pattern-matching.html
+        │       │   ├── glib-GTimeZone.html
+        │       │   ├── glib-GVariant.html
+        │       │   ├── glib-GVariantType.html
+        │       │   ├── glib-Hash-Tables.html
+        │       │   ├── glib-Hook-Functions.html
+        │       │   ├── glib-Hostname-Utilities.html
+        │       │   ├── glib.html
+        │       │   ├── glib-I18N.html
+        │       │   ├── glib-IO-Channels.html
+        │       │   ├── glib-Keyed-Data-Lists.html
+        │       │   ├── glib-Key-value-file-parser.html
+        │       │   ├── glib-Lexical-Scanner.html
+        │       │   ├── glib-Memory-Allocation.html
+        │       │   ├── glib-Memory-Slices.html
+        │       │   ├── glib-Message-Logging.html
+        │       │   ├── glib-Miscellaneous-Macros.html
+        │       │   ├── glib-Miscellaneous-Utility-Functions.html
+        │       │   ├── glib-N-ary-Trees.html
+        │       │   ├── glib-Numerical-Definitions.html
+        │       │   ├── glib-Perl-compatible-regular-expressions.html
+        │       │   ├── glib-Pointer-Arrays.html
+        │       │   ├── glib-programming.html
+        │       │   ├── glib-Quarks.html
+        │       │   ├── glib-Random-Numbers.html
+        │       │   ├── glib-regex-syntax.html
+        │       │   ├── glib-Relations-and-Tuples.html
+        │       │   ├── glib-resources.html
+        │       │   ├── glib-running.html
+        │       │   ├── glib-Sequences.html
+        │       │   ├── glib-Shell-related-Utilities.html
+        │       │   ├── glib-Simple-XML-Subset-Parser.html
+        │       │   ├── glib-Singly-Linked-Lists.html
+        │       │   ├── glib-Spawning-Processes.html
+        │       │   ├── glib-Standard-Macros.html
+        │       │   ├── glib-String-Chunks.html
+        │       │   ├── glib-Strings.html
+        │       │   ├── glib-String-Utility-Functions.html
+        │       │   ├── glib-Testing.html
+        │       │   ├── glib-The-Main-Event-Loop.html
+        │       │   ├── glib-Thread-Pools.html
+        │       │   ├── glib-Threads.html
+        │       │   ├── glib-Timers.html
+        │       │   ├── glib-Trash-Stacks.html
+        │       │   ├── glib-Type-Conversion-Macros.html
+        │       │   ├── glib-Unicode-Manipulation.html
+        │       │   ├── glib-UNIX-specific-utilities-and-integration.html
+        │       │   ├── glib-URI-Functions.html
+        │       │   ├── glib-utilities.html
+        │       │   ├── glib-Version-Information.html
+        │       │   ├── glib-Warnings-and-Assertions.html
+        │       │   ├── glib-Windows-Compatibility-Functions.html
+        │       │   ├── gtester.html
+        │       │   ├── gtester-report.html
+        │       │   ├── gvariant-format-strings.html
+        │       │   ├── gvariant-text.html
+        │       │   ├── home.png
+        │       │   ├── index.html
+        │       │   ├── index.sgml
+        │       │   ├── left-insensitive.png
+        │       │   ├── left.png
+        │       │   ├── mainloop-states.gif
+        │       │   ├── right-insensitive.png
+        │       │   ├── right.png
+        │       │   ├── Sorted_binary_tree_breadth-first_traversal.svg
+        │       │   ├── Sorted_binary_tree_inorder.svg
+        │       │   ├── Sorted_binary_tree_postorder.svg
+        │       │   ├── Sorted_binary_tree_preorder.svg
+        │       │   ├── style.css
+        │       │   ├── tools.html
+        │       │   ├── up-insensitive.png
+        │       │   └── up.png
+        │       ├── gobject
+        │       │   ├── annotation-glossary.html
+        │       │   ├── api-index-2-10.html
+        │       │   ├── api-index-2-12.html
+        │       │   ├── api-index-2-14.html
+        │       │   ├── api-index-2-18.html
+        │       │   ├── api-index-2-22.html
+        │       │   ├── api-index-2-24.html
+        │       │   ├── api-index-2-26.html
+        │       │   ├── api-index-2-28.html
+        │       │   ├── api-index-2-2.html
+        │       │   ├── api-index-2-30.html
+        │       │   ├── api-index-2-32.html
+        │       │   ├── api-index-2-34.html
+        │       │   ├── api-index-2-36.html
+        │       │   ├── api-index-2-38.html
+        │       │   ├── api-index-2-4.html
+        │       │   ├── api-index-2-6.html
+        │       │   ├── api-index-2-8.html
+        │       │   ├── api-index-deprecated.html
+        │       │   ├── api-index-full.html
+        │       │   ├── ch01s02.html
+        │       │   ├── chapter-gobject.html
+        │       │   ├── chapter-gtype.html
+        │       │   ├── chapter-intro.html
+        │       │   ├── chapter-signal.html
+        │       │   ├── GBinding.html
+        │       │   ├── glib-genmarshal.html
+        │       │   ├── glib-mkenums.html
+        │       │   ├── glue.png
+        │       │   ├── gobject-Boxed-Types.html
+        │       │   ├── gobject-Closures.html
+        │       │   ├── gobject.devhelp2.gz
+        │       │   ├── gobject-Enumeration-and-Flag-Types.html
+        │       │   ├── gobject-Generic-values.html
+        │       │   ├── gobject-GParamSpec.html
+        │       │   ├── gobject-memory.html
+        │       │   ├── gobject-properties.html
+        │       │   ├── gobject-query.html
+        │       │   ├── gobject-Signals.html
+        │       │   ├── gobject-Standard-Parameter-and-Value-Types.html
+        │       │   ├── gobject-The-Base-Object-Type.html
+        │       │   ├── gobject-Type-Information.html
+        │       │   ├── gobject-Value-arrays.html
+        │       │   ├── gobject-Varargs-Value-Collection.html
+        │       │   ├── gtype-conventions.html
+        │       │   ├── gtype-instantiable-classed.html
+        │       │   ├── GTypeModule.html
+        │       │   ├── gtype-non-instantiable-classed.html
+        │       │   ├── gtype-non-instantiable.html
+        │       │   ├── GTypePlugin.html
+        │       │   ├── home.png
+        │       │   ├── howto-gobject-chainup.html
+        │       │   ├── howto-gobject-code.html
+        │       │   ├── howto-gobject-construction.html
+        │       │   ├── howto-gobject-destruction.html
+        │       │   ├── howto-gobject.html
+        │       │   ├── howto-gobject-methods.html
+        │       │   ├── howto-interface.html
+        │       │   ├── howto-interface-implement.html
+        │       │   ├── howto-interface-override.html
+        │       │   ├── howto-interface-prerequisite.html
+        │       │   ├── howto-interface-properties.html
+        │       │   ├── howto-signals.html
+        │       │   ├── index.html
+        │       │   ├── index.sgml
+        │       │   ├── left-insensitive.png
+        │       │   ├── left.png
+        │       │   ├── pr01.html
+        │       │   ├── pt01.html
+        │       │   ├── pt02.html
+        │       │   ├── pt03.html
+        │       │   ├── right-insensitive.png
+        │       │   ├── right.png
+        │       │   ├── rn01.html
+        │       │   ├── rn02.html
+        │       │   ├── signal.html
+        │       │   ├── style.css
+        │       │   ├── tools-ginspector.html
+        │       │   ├── tools-gob.html
+        │       │   ├── tools-gtkdoc.html
+        │       │   ├── tools-refdb.html
+        │       │   ├── tools-vala.html
+        │       │   ├── up-insensitive.png
+        │       │   └── up.png
+        │       ├── gtk -&gt; ../libgtk2.0-doc/gtk
+        │       ├── NEWS.gz
+        │       └── README.gz
+        ├── doc-base
+        │   ├── gio
+        │   ├── glib
+        │   └── gobject
+        ├── gtk-doc
+        │   └── html
+        │       ├── gio -&gt; ../../doc/libglib2.0-doc/gio
+        │       ├── glib -&gt; ../../doc/libglib2.0-doc/glib
+        │       └── gobject -&gt; ../../doc/libglib2.0-doc/gobject
+        └── lintian
+            └── overrides
+                └── libglib2.0-doc
+
+16 directories, 481 files</code></pre>
+
+
+<p>若有安裝這個套件的話，可執行</p>
+<pre class="code"><code class="language-sh">$ dpkg -L libglib2.0-doc</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>/.
+/usr
+/usr/share
+/usr/share/doc-base
+/usr/share/doc-base/gio
+/usr/share/doc-base/glib
+/usr/share/doc-base/gobject
+/usr/share/lintian
+/usr/share/lintian/overrides
+/usr/share/lintian/overrides/libglib2.0-doc
+/usr/share/gtk-doc
+/usr/share/gtk-doc/html
+/usr/share/doc
+/usr/share/doc/libglib2.0-doc
+/usr/share/doc/libglib2.0-doc/gdbus-object-manager-example
+/usr/share/doc/libglib2.0-doc/gdbus-object-manager-example/index.html
+/usr/share/doc/libglib2.0-doc/gdbus-object-manager-example/style.css
+/usr/share/doc/libglib2.0-doc/gdbus-object-manager-example/pt01.html
+/usr/share/doc/libglib2.0-doc/gdbus-object-manager-example/left-insensitive.png
+/usr/share/doc/libglib2.0-doc/gdbus-object-manager-example/ExampleObject.html
+/usr/share/doc/libglib2.0-doc/gdbus-object-manager-example/right-insensitive.png
+/usr/share/doc/libglib2.0-doc/gdbus-object-manager-example/ExampleAnimal.html
+/usr/share/doc/libglib2.0-doc/gdbus-object-manager-example/home.png
+/usr/share/doc/libglib2.0-doc/gdbus-object-manager-example/left.png
+/usr/share/doc/libglib2.0-doc/gdbus-object-manager-example/up-insensitive.png
+/usr/share/doc/libglib2.0-doc/gdbus-object-manager-example/gdbus-object-manager-example.devhelp2.gz
+/usr/share/doc/libglib2.0-doc/gdbus-object-manager-example/index.sgml
+/usr/share/doc/libglib2.0-doc/gdbus-object-manager-example/right.png
+/usr/share/doc/libglib2.0-doc/gdbus-object-manager-example/ExampleObjectManagerClient.html
+/usr/share/doc/libglib2.0-doc/gdbus-object-manager-example/ExampleCat.html
+/usr/share/doc/libglib2.0-doc/gdbus-object-manager-example/ch01.html
+/usr/share/doc/libglib2.0-doc/gdbus-object-manager-example/up.png
+/usr/share/doc/libglib2.0-doc/gio
+/usr/share/doc/libglib2.0-doc/gio/GDBusMethodInvocation.html
+/usr/share/doc/libglib2.0-doc/gio/migrating.html
+/usr/share/doc/libglib2.0-doc/gio/GTlsPassword.html
+/usr/share/doc/libglib2.0-doc/gio/GSocketAddress.html
+/usr/share/doc/libglib2.0-doc/gio/GInitable.html
+/usr/share/doc/libglib2.0-doc/gio/GTestDBus.html
+/usr/share/doc/libglib2.0-doc/gio/ch32s02.html
+/usr/share/doc/libglib2.0-doc/gio/GDBusMessage.html
+/usr/share/doc/libglib2.0-doc/gio/GFileInputStream.html
+/usr/share/doc/libglib2.0-doc/gio/GDBusObjectManager.html
+/usr/share/doc/libglib2.0-doc/gio/GSocketConnection.html
+/usr/share/doc/libglib2.0-doc/gio/gio-GInetAddressMask.html
+/usr/share/doc/libglib2.0-doc/gio/GFilenameCompleter.html
+/usr/share/doc/libglib2.0-doc/gio/gio-GPropertyAction.html
+/usr/share/doc/libglib2.0-doc/gio/GActionGroup.html
+/usr/share/doc/libglib2.0-doc/gio/settings.html
+/usr/share/doc/libglib2.0-doc/gio/GCancellable.html
+/usr/share/doc/libglib2.0-doc/gio/ch33s02.html
+/usr/share/doc/libglib2.0-doc/gio/menu-example.png
+/usr/share/doc/libglib2.0-doc/gio/GUnixCredentialsMessage.html
+/usr/share/doc/libglib2.0-doc/gio/GSimpleAction.html
+/usr/share/doc/libglib2.0-doc/gio/GSrvTarget.html
+/usr/share/doc/libglib2.0-doc/gio/gio-GDBusError.html
+/usr/share/doc/libglib2.0-doc/gio/index.html
+/usr/share/doc/libglib2.0-doc/gio/file_mon.html
+/usr/share/doc/libglib2.0-doc/gio/GMemoryInputStream.html
+/usr/share/doc/libglib2.0-doc/gio/style.css
+/usr/share/doc/libglib2.0-doc/gio/GNetworkAddress.html
+/usr/share/doc/libglib2.0-doc/gio/GConverter.html
+/usr/share/doc/libglib2.0-doc/gio/pt01.html
+/usr/share/doc/libglib2.0-doc/gio/GMemoryOutputStream.html
+/usr/share/doc/libglib2.0-doc/gio/GFileInfo.html
+/usr/share/doc/libglib2.0-doc/gio/api-index-2-38.html
+/usr/share/doc/libglib2.0-doc/gio/api-index-full.html
+/usr/share/doc/libglib2.0-doc/gio/gio-GConverterInputstream.html
+/usr/share/doc/libglib2.0-doc/gio/GUnixOutputStream.html
+/usr/share/doc/libglib2.0-doc/gio/ch33s04.html
+/usr/share/doc/libglib2.0-doc/gio/GCharsetConverter.html
+/usr/share/doc/libglib2.0-doc/gio/GDBusInterface.html
+/usr/share/doc/libglib2.0-doc/gio/left-insensitive.png
+/usr/share/doc/libglib2.0-doc/gio/gsettings-tool.html
+/usr/share/doc/libglib2.0-doc/gio/gio-GSettingsSchema-GSettingsSchemaSource.html
+/usr/share/doc/libglib2.0-doc/gio/gio-Extension-Points.html
+/usr/share/doc/libglib2.0-doc/gio/GDBusObject.html
+/usr/share/doc/libglib2.0-doc/gio/GInputStream.html
+/usr/share/doc/libglib2.0-doc/gio/gio-GActionGroup-exporter.html
+/usr/share/doc/libglib2.0-doc/gio/ch31.html
+/usr/share/doc/libglib2.0-doc/gio/ch32s05.html
+/usr/share/doc/libglib2.0-doc/gio/gio-Desktop-file-based-GAppInfo.html
+/usr/share/doc/libglib2.0-doc/gio/GUnixFDList.html
+/usr/share/doc/libglib2.0-doc/gio/GDBusObjectProxy.html
+/usr/share/doc/libglib2.0-doc/gio/GIOStream.html
+/usr/share/doc/libglib2.0-doc/gio/GApplicationCommandLine.html
+/usr/share/doc/libglib2.0-doc/gio/api-index-2-36.html
+/usr/share/doc/libglib2.0-doc/gio/api-index-2-18.html
+/usr/share/doc/libglib2.0-doc/gio/gdbus-codegen.html
+/usr/share/doc/libglib2.0-doc/gio/GMenuModel.html
+/usr/share/doc/libglib2.0-doc/gio/ExampleObject.html
+/usr/share/doc/libglib2.0-doc/gio/ch02.html
+/usr/share/doc/libglib2.0-doc/gio/GDBusProxy.html
+/usr/share/doc/libglib2.0-doc/gio/GSocketListener.html
+/usr/share/doc/libglib2.0-doc/gio/gdbus.html
+/usr/share/doc/libglib2.0-doc/gio/gio-querymodules.html
+/usr/share/doc/libglib2.0-doc/gio/GDBusServer.html
+/usr/share/doc/libglib2.0-doc/gio/gio-gnetworking.h.html
+/usr/share/doc/libglib2.0-doc/gio/GProxyResolver.html
+/usr/share/doc/libglib2.0-doc/gio/GAppInfo.html
+/usr/share/doc/libglib2.0-doc/gio/gio-GWin32OutputStream.html
+/usr/share/doc/libglib2.0-doc/gio/gvfs-overview.png
+/usr/share/doc/libglib2.0-doc/gio/GTlsFileDatabase.html
+/usr/share/doc/libglib2.0-doc/gio/GEmblemedIcon.html
+/usr/share/doc/libglib2.0-doc/gio/utils.html
+/usr/share/doc/libglib2.0-doc/gio/gdbus-org.gtk.GDBus.Example.ObjectManager.Animal.html
+/usr/share/doc/libglib2.0-doc/gio/GAppInfoMonitor.html
+/usr/share/doc/libglib2.0-doc/gio/file_ops.html
+/usr/share/doc/libglib2.0-doc/gio/GInetAddress.html
+/usr/share/doc/libglib2.0-doc/gio/GTlsDatabase.html
+/usr/share/doc/libglib2.0-doc/gio/GSubprocess.html
+/usr/share/doc/libglib2.0-doc/gio/GDataOutputStream.html
+/usr/share/doc/libglib2.0-doc/gio/gio-GSubprocessLauncher.html
+/usr/share/doc/libglib2.0-doc/gio/GCredentials.html
+/usr/share/doc/libglib2.0-doc/gio/gio-gpollableutils.html
+/usr/share/doc/libglib2.0-doc/gio/GUnixSocketAddress.html
+/usr/share/doc/libglib2.0-doc/gio/GSocketClient.html
+/usr/share/doc/libglib2.0-doc/gio/gio-Unix-Mounts.html
+/usr/share/doc/libglib2.0-doc/gio/GMount.html
+/usr/share/doc/libglib2.0-doc/gio/gio-GFileAttribute.html
+/usr/share/doc/libglib2.0-doc/gio/GBufferedOutputStream.html
+/usr/share/doc/libglib2.0-doc/gio/GSocketService.html
+/usr/share/doc/libglib2.0-doc/gio/GSimplePermission.html
+/usr/share/doc/libglib2.0-doc/gio/ch32s07.html
+/usr/share/doc/libglib2.0-doc/gio/gio-D-Bus-Introspection-Data.html
+/usr/share/doc/libglib2.0-doc/gio/GSimpleActionGroup.html
+/usr/share/doc/libglib2.0-doc/gio/GIOModule.html
+/usr/share/doc/libglib2.0-doc/gio/ch32s04.html
+/usr/share/doc/libglib2.0-doc/gio/GFilterOutputStream.html
+/usr/share/doc/libglib2.0-doc/gio/GFileIcon.html
+/usr/share/doc/libglib2.0-doc/gio/GOutputStream.html
+/usr/share/doc/libglib2.0-doc/gio/annotation-glossary.html
+/usr/share/doc/libglib2.0-doc/gio/right-insensitive.png
+/usr/share/doc/libglib2.0-doc/gio/resources.html
+/usr/share/doc/libglib2.0-doc/gio/GFilterInputStream.html
+/usr/share/doc/libglib2.0-doc/gio/GSimpleProxyResolver.html
+/usr/share/doc/libglib2.0-doc/gio/GApplication.html
+/usr/share/doc/libglib2.0-doc/gio/GMountOperation.html
+/usr/share/doc/libglib2.0-doc/gio/gio-GResource.html
+/usr/share/doc/libglib2.0-doc/gio/GThemedIcon.html
+/usr/share/doc/libglib2.0-doc/gio/api-index-2-40.html
+/usr/share/doc/libglib2.0-doc/gio/api-index-2-32.html
+/usr/share/doc/libglib2.0-doc/gio/GInetSocketAddress.html
+/usr/share/doc/libglib2.0-doc/gio/streaming.html
+/usr/share/doc/libglib2.0-doc/gio/GTlsClientConnection.html
+/usr/share/doc/libglib2.0-doc/gio/GFileEnumerator.html
+/usr/share/doc/libglib2.0-doc/gio/GSimpleAsyncResult.html
+/usr/share/doc/libglib2.0-doc/gio/async.html
+/usr/share/doc/libglib2.0-doc/gio/running-gio-apps.html
+/usr/share/doc/libglib2.0-doc/gio/GPollableOutputStream.html
+/usr/share/doc/libglib2.0-doc/gio/extending-gio.html
+/usr/share/doc/libglib2.0-doc/gio/gdbus-lowlevel.html
+/usr/share/doc/libglib2.0-doc/gio/pt02.html
+/usr/share/doc/libglib2.0-doc/gio/ch32.html
+/usr/share/doc/libglib2.0-doc/gio/subprocesses.html
+/usr/share/doc/libglib2.0-doc/gio/gio-hierarchy.html
+/usr/share/doc/libglib2.0-doc/gio/GFileOutputStream.html
+/usr/share/doc/libglib2.0-doc/gio/ch32s06.html
+/usr/share/doc/libglib2.0-doc/gio/ExampleAnimal.html
+/usr/share/doc/libglib2.0-doc/gio/GVolumeMonitor.html
+/usr/share/doc/libglib2.0-doc/gio/icons.html
+/usr/share/doc/libglib2.0-doc/gio/ch03.html
+/usr/share/doc/libglib2.0-doc/gio/gdbus-org.gtk.GDBus.Example.ObjectManager.Cat.html
+/usr/share/doc/libglib2.0-doc/gio/GAsyncInitable.html
+/usr/share/doc/libglib2.0-doc/gio/GTask.html
+/usr/share/doc/libglib2.0-doc/gio/ch32s03.html
+/usr/share/doc/libglib2.0-doc/gio/GProxy.html
+/usr/share/doc/libglib2.0-doc/gio/api-index-2-34.html
+/usr/share/doc/libglib2.0-doc/gio/ch31s02.html
+/usr/share/doc/libglib2.0-doc/gio/GDBusInterfaceSkeleton.html
+/usr/share/doc/libglib2.0-doc/gio/home.png
+/usr/share/doc/libglib2.0-doc/gio/gio-GBytesIcon.html
+/usr/share/doc/libglib2.0-doc/gio/GProxyAddress.html
+/usr/share/doc/libglib2.0-doc/gio/GRemoteActionGroup.html
+/usr/share/doc/libglib2.0-doc/gio/highlevel-socket.html
+/usr/share/doc/libglib2.0-doc/gio/api-index-deprecated.html
+/usr/share/doc/libglib2.0-doc/gio/ch33.html
+/usr/share/doc/libglib2.0-doc/gio/networking.html
+/usr/share/doc/libglib2.0-doc/gio/GNetworkService.html
+/usr/share/doc/libglib2.0-doc/gio/GUnixInputStream.html
+/usr/share/doc/libglib2.0-doc/gio/left.png
+/usr/share/doc/libglib2.0-doc/gio/GVfs.html
+/usr/share/doc/libglib2.0-doc/gio/types.html
+/usr/share/doc/libglib2.0-doc/gio/GFileDescriptorBased.html
+/usr/share/doc/libglib2.0-doc/gio/GFileIOStream.html
+/usr/share/doc/libglib2.0-doc/gio/gio-GWin32InputStream.html
+/usr/share/doc/libglib2.0-doc/gio/GTlsCertificate.html
+/usr/share/doc/libglib2.0-doc/gio/api-index-2-28.html
+/usr/share/doc/libglib2.0-doc/gio/GZlibCompressor.html
+/usr/share/doc/libglib2.0-doc/gio/GSocketControlMessage.html
+/usr/share/doc/libglib2.0-doc/gio/gio-Owning-Bus-Names.html
+/usr/share/doc/libglib2.0-doc/gio/GVolume.html
+/usr/share/doc/libglib2.0-doc/gio/GSeekable.html
+/usr/share/doc/libglib2.0-doc/gio/GAsyncResult.html
+/usr/share/doc/libglib2.0-doc/gio/GTlsServerConnection.html
+/usr/share/doc/libglib2.0-doc/gio/GLoadableIcon.html
+/usr/share/doc/libglib2.0-doc/gio/gio-D-Bus-Addresses.html
+/usr/share/doc/libglib2.0-doc/gio/up-insensitive.png
+/usr/share/doc/libglib2.0-doc/gio/glib-compile-schemas.html
+/usr/share/doc/libglib2.0-doc/gio/gio-D-Bus-Utilities.html
+/usr/share/doc/libglib2.0-doc/gio/api-index-2-22.html
+/usr/share/doc/libglib2.0-doc/gio/GSocket.html
+/usr/share/doc/libglib2.0-doc/gio/index.sgml
+/usr/share/doc/libglib2.0-doc/gio/menu-model.png
+/usr/share/doc/libglib2.0-doc/gio/api-index-2-24.html
+/usr/share/doc/libglib2.0-doc/gio/application.html
+/usr/share/doc/libglib2.0-doc/gio/GFile.html
+/usr/share/doc/libglib2.0-doc/gio/tls.html
+/usr/share/doc/libglib2.0-doc/gio/extending.html
+/usr/share/doc/libglib2.0-doc/gio/GIcon.html
+/usr/share/doc/libglib2.0-doc/gio/resolver.html
+/usr/share/doc/libglib2.0-doc/gio/GTcpConnection.html
+/usr/share/doc/libglib2.0-doc/gio/testing.html
+/usr/share/doc/libglib2.0-doc/gio/GDBusConnection.html
+/usr/share/doc/libglib2.0-doc/gio/right.png
+/usr/share/doc/libglib2.0-doc/gio/gapplication-tool.html
+/usr/share/doc/libglib2.0-doc/gio/gresource-tool.html
+/usr/share/doc/libglib2.0-doc/gio/volume_mon.html
+/usr/share/doc/libglib2.0-doc/gio/GSettingsBackend.html
+/usr/share/doc/libglib2.0-doc/gio/gio-GMenuModel-exporter.html
+/usr/share/doc/libglib2.0-doc/gio/tools.html
+/usr/share/doc/libglib2.0-doc/gio/api-index-2-30.html
+/usr/share/doc/libglib2.0-doc/gio/glib-compile-resources.html
+/usr/share/doc/libglib2.0-doc/gio/GDrive.html
+/usr/share/doc/libglib2.0-doc/gio/GMenu.html
+/usr/share/doc/libglib2.0-doc/gio/gio-GConverterOutputstream.html
+/usr/share/doc/libglib2.0-doc/gio/GTlsBackend.html
+/usr/share/doc/libglib2.0-doc/gio/GBufferedInputStream.html
+/usr/share/doc/libglib2.0-doc/gio/GPermission.html
+/usr/share/doc/libglib2.0-doc/gio/failable_initialization.html
+/usr/share/doc/libglib2.0-doc/gio/gdbus-convenience.html
+/usr/share/doc/libglib2.0-doc/gio/ExampleObjectManagerClient.html
+/usr/share/doc/libglib2.0-doc/gio/GDBusObjectSkeleton.html
+/usr/share/doc/libglib2.0-doc/gio/GResolver.html
+/usr/share/doc/libglib2.0-doc/gio/GTcpWrapperConnection.html
+/usr/share/doc/libglib2.0-doc/gio/api-index-2-26.html
+/usr/share/doc/libglib2.0-doc/gio/GUnixConnection.html
+/usr/share/doc/libglib2.0-doc/gio/conversion.html
+/usr/share/doc/libglib2.0-doc/gio/gio-GNotification.html
+/usr/share/doc/libglib2.0-doc/gio/GDBusActionGroup.html
+/usr/share/doc/libglib2.0-doc/gio/GActionMap.html
+/usr/share/doc/libglib2.0-doc/gio/gio-GContentType.html
+/usr/share/doc/libglib2.0-doc/gio/gio-GIOError.html
+/usr/share/doc/libglib2.0-doc/gio/ch31s03.html
+/usr/share/doc/libglib2.0-doc/gio/GSocketConnectable.html
+/usr/share/doc/libglib2.0-doc/gio/GTlsInteraction.html
+/usr/share/doc/libglib2.0-doc/gio/GDataInputStream.html
+/usr/share/doc/libglib2.0-doc/gio/gio-TLS-Overview.html
+/usr/share/doc/libglib2.0-doc/gio/gio-Watching-Bus-Names.html
+/usr/share/doc/libglib2.0-doc/gio/ExampleCat.html
+/usr/share/doc/libglib2.0-doc/gio/GDBusObjectManagerServer.html
+/usr/share/doc/libglib2.0-doc/gio/GFileMonitor.html
+/usr/share/doc/libglib2.0-doc/gio/GAction.html
+/usr/share/doc/libglib2.0-doc/gio/GNetworkMonitor.html
+/usr/share/doc/libglib2.0-doc/gio/GTlsConnection.html
+/usr/share/doc/libglib2.0-doc/gio/ch30.html
+/usr/share/doc/libglib2.0-doc/gio/ch33s03.html
+/usr/share/doc/libglib2.0-doc/gio/GDBusMenuModel.html
+/usr/share/doc/libglib2.0-doc/gio/gio.devhelp2.gz
+/usr/share/doc/libglib2.0-doc/gio/GUnixFDMessage.html
+/usr/share/doc/libglib2.0-doc/gio/GPollableInputStream.html
+/usr/share/doc/libglib2.0-doc/gio/api-index-2-20.html
+/usr/share/doc/libglib2.0-doc/gio/ch01.html
+/usr/share/doc/libglib2.0-doc/gio/ch33s05.html
+/usr/share/doc/libglib2.0-doc/gio/GThreadedSocketService.html
+/usr/share/doc/libglib2.0-doc/gio/GSettings.html
+/usr/share/doc/libglib2.0-doc/gio/gio-GIOScheduler.html
+/usr/share/doc/libglib2.0-doc/gio/GEmblem.html
+/usr/share/doc/libglib2.0-doc/gio/permissions.html
+/usr/share/doc/libglib2.0-doc/gio/GZlibDecompressor.html
+/usr/share/doc/libglib2.0-doc/gio/GDBusAuthObserver.html
+/usr/share/doc/libglib2.0-doc/gio/GDBusObjectManagerClient.html
+/usr/share/doc/libglib2.0-doc/gio/up.png
+/usr/share/doc/libglib2.0-doc/copyright
+/usr/share/doc/libglib2.0-doc/glib
+/usr/share/doc/libglib2.0-doc/glib/glib-Lexical-Scanner.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Memory-Slices.html
+/usr/share/doc/libglib2.0-doc/glib/api-index-2-4.html
+/usr/share/doc/libglib2.0-doc/glib/index.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Numerical-Definitions.html
+/usr/share/doc/libglib2.0-doc/glib/style.css
+/usr/share/doc/libglib2.0-doc/glib/api-index-2-38.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Trash-Stacks.html
+/usr/share/doc/libglib2.0-doc/glib/api-index-full.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Version-Information.html
+/usr/share/doc/libglib2.0-doc/glib/left-insensitive.png
+/usr/share/doc/libglib2.0-doc/glib/glib-Relations-and-Tuples.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Basic-Types.html
+/usr/share/doc/libglib2.0-doc/glib/glib-File-Utilities.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Data-HMACs.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Doubly-Linked-Lists.html
+/usr/share/doc/libglib2.0-doc/glib/glib-programming.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Atomic-Operations.html
+/usr/share/doc/libglib2.0-doc/glib/api-index-2-36.html
+/usr/share/doc/libglib2.0-doc/glib/api-index-2-18.html
+/usr/share/doc/libglib2.0-doc/glib/deprecated.html
+/usr/share/doc/libglib2.0-doc/glib/Sorted_binary_tree_preorder.svg
+/usr/share/doc/libglib2.0-doc/glib/Sorted_binary_tree_inorder.svg
+/usr/share/doc/libglib2.0-doc/glib/api-index-2-2.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Threads.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Double-ended-Queues.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Error-Reporting.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Asynchronous-Queues.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Shell-related-Utilities.html
+/usr/share/doc/libglib2.0-doc/glib/gtester-report.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Spawning-Processes.html
+/usr/share/doc/libglib2.0-doc/glib/api-index-2-14.html
+/usr/share/doc/libglib2.0-doc/glib/api-index-2-16.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Random-Numbers.html
+/usr/share/doc/libglib2.0-doc/glib/glib-IO-Channels.html
+/usr/share/doc/libglib2.0-doc/glib/mainloop-states.gif
+/usr/share/doc/libglib2.0-doc/glib/annotation-glossary.html
+/usr/share/doc/libglib2.0-doc/glib/right-insensitive.png
+/usr/share/doc/libglib2.0-doc/glib/glib-The-Main-Event-Loop.html
+/usr/share/doc/libglib2.0-doc/glib/glib-compiling.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Pointer-Arrays.html
+/usr/share/doc/libglib2.0-doc/glib/glib-GTimeZone.html
+/usr/share/doc/libglib2.0-doc/glib/gtester.html
+/usr/share/doc/libglib2.0-doc/glib/api-index-2-40.html
+/usr/share/doc/libglib2.0-doc/glib/api-index-2-32.html
+/usr/share/doc/libglib2.0-doc/glib/glib-regex-syntax.html
+/usr/share/doc/libglib2.0-doc/glib/glib-cross-compiling.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Hash-Tables.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Automatic-String-Completion.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Windows-Compatibility-Functions.html
+/usr/share/doc/libglib2.0-doc/glib/glib-data-types.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Thread-Pools.html
+/usr/share/doc/libglib2.0-doc/glib/gvariant-text.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Testing.html
+/usr/share/doc/libglib2.0-doc/glib/Sorted_binary_tree_breadth-first_traversal.svg
+/usr/share/doc/libglib2.0-doc/glib/glib-Simple-XML-Subset-Parser.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Message-Logging.html
+/usr/share/doc/libglib2.0-doc/glib/glib-String-Chunks.html
+/usr/share/doc/libglib2.0-doc/glib/glib-changes.html
+/usr/share/doc/libglib2.0-doc/glib/api-index-2-10.html
+/usr/share/doc/libglib2.0-doc/glib/glib-fundamentals.html
+/usr/share/doc/libglib2.0-doc/glib/glib.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Keyed-Data-Lists.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Perl-compatible-regular-expressions.html
+/usr/share/doc/libglib2.0-doc/glib/Sorted_binary_tree_postorder.svg
+/usr/share/doc/libglib2.0-doc/glib/glib-Arrays.html
+/usr/share/doc/libglib2.0-doc/glib/api-index-2-34.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Base64-Encoding.html
+/usr/share/doc/libglib2.0-doc/glib/home.png
+/usr/share/doc/libglib2.0-doc/glib/glib-Balanced-Binary-Trees.html
+/usr/share/doc/libglib2.0-doc/glib/api-index-deprecated.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Type-Conversion-Macros.html
+/usr/share/doc/libglib2.0-doc/glib/left.png
+/usr/share/doc/libglib2.0-doc/glib/glib-Singly-Linked-Lists.html
+/usr/share/doc/libglib2.0-doc/glib/glib-building.html
+/usr/share/doc/libglib2.0-doc/glib/glib-gettextize.html
+/usr/share/doc/libglib2.0-doc/glib/api-index-2-28.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Commandline-option-parser.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Byte-Order-Macros.html
+/usr/share/doc/libglib2.0-doc/glib/glib-resources.html
+/usr/share/doc/libglib2.0-doc/glib/api-index-2-8.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Byte-Arrays.html
+/usr/share/doc/libglib2.0-doc/glib/up-insensitive.png
+/usr/share/doc/libglib2.0-doc/glib/glib-Warnings-and-Assertions.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Caches.html
+/usr/share/doc/libglib2.0-doc/glib/glib-core.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Data-Checksums.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Datasets.html
+/usr/share/doc/libglib2.0-doc/glib/api-index-2-22.html
+/usr/share/doc/libglib2.0-doc/glib/index.sgml
+/usr/share/doc/libglib2.0-doc/glib/glib-Quarks.html
+/usr/share/doc/libglib2.0-doc/glib/api-index-2-24.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Timers.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Glob-style-pattern-matching.html
+/usr/share/doc/libglib2.0-doc/glib/glib.devhelp2.gz
+/usr/share/doc/libglib2.0-doc/glib/right.png
+/usr/share/doc/libglib2.0-doc/glib/glib-running.html
+/usr/share/doc/libglib2.0-doc/glib/file-name-encodings.png
+/usr/share/doc/libglib2.0-doc/glib/glib-Date-and-Time-Functions.html
+/usr/share/doc/libglib2.0-doc/glib/tools.html
+/usr/share/doc/libglib2.0-doc/glib/api-index-2-6.html
+/usr/share/doc/libglib2.0-doc/glib/api-index-2-30.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Bookmark-file-parser.html
+/usr/share/doc/libglib2.0-doc/glib/glib-utilities.html
+/usr/share/doc/libglib2.0-doc/glib/api-index-2-12.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Unicode-Manipulation.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Standard-Macros.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Sequences.html
+/usr/share/doc/libglib2.0-doc/glib/glib-UNIX-specific-utilities-and-integration.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Strings.html
+/usr/share/doc/libglib2.0-doc/glib/api-index-2-26.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Character-Set-Conversion.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Hook-Functions.html
+/usr/share/doc/libglib2.0-doc/glib/glib-I18N.html
+/usr/share/doc/libglib2.0-doc/glib/glib-GVariant.html
+/usr/share/doc/libglib2.0-doc/glib/gvariant-format-strings.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Deprecated-Thread-APIs.html
+/usr/share/doc/libglib2.0-doc/glib/glib-String-Utility-Functions.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Hostname-Utilities.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Key-value-file-parser.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Miscellaneous-Macros.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Dynamic-Loading-of-Modules.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Memory-Allocation.html
+/usr/share/doc/libglib2.0-doc/glib/glib-N-ary-Trees.html
+/usr/share/doc/libglib2.0-doc/glib/glib-Miscellaneous-Utility-Functions.html
+/usr/share/doc/libglib2.0-doc/glib/api-index-2-20.html
+/usr/share/doc/libglib2.0-doc/glib/glib-GDateTime.html
+/usr/share/doc/libglib2.0-doc/glib/glib-GVariantType.html
+/usr/share/doc/libglib2.0-doc/glib/glib-URI-Functions.html
+/usr/share/doc/libglib2.0-doc/glib/up.png
+/usr/share/doc/libglib2.0-doc/NEWS.gz
+/usr/share/doc/libglib2.0-doc/README.gz
+/usr/share/doc/libglib2.0-doc/AUTHORS
+/usr/share/doc/libglib2.0-doc/changelog.Debian.gz
+/usr/share/doc/libglib2.0-doc/gobject
+/usr/share/doc/libglib2.0-doc/gobject/howto-gobject-chainup.html
+/usr/share/doc/libglib2.0-doc/gobject/gobject-memory.html
+/usr/share/doc/libglib2.0-doc/gobject/glib-mkenums.html
+/usr/share/doc/libglib2.0-doc/gobject/api-index-2-4.html
+/usr/share/doc/libglib2.0-doc/gobject/index.html
+/usr/share/doc/libglib2.0-doc/gobject/chapter-gobject.html
+/usr/share/doc/libglib2.0-doc/gobject/style.css
+/usr/share/doc/libglib2.0-doc/gobject/tools-gtkdoc.html
+/usr/share/doc/libglib2.0-doc/gobject/pt01.html
+/usr/share/doc/libglib2.0-doc/gobject/api-index-2-38.html
+/usr/share/doc/libglib2.0-doc/gobject/api-index-full.html
+/usr/share/doc/libglib2.0-doc/gobject/howto-interface-properties.html
+/usr/share/doc/libglib2.0-doc/gobject/gobject-Enumeration-and-Flag-Types.html
+/usr/share/doc/libglib2.0-doc/gobject/left-insensitive.png
+/usr/share/doc/libglib2.0-doc/gobject/howto-interface-implement.html
+/usr/share/doc/libglib2.0-doc/gobject/rn02.html
+/usr/share/doc/libglib2.0-doc/gobject/GBinding.html
+/usr/share/doc/libglib2.0-doc/gobject/howto-gobject-methods.html
+/usr/share/doc/libglib2.0-doc/gobject/api-index-2-36.html
+/usr/share/doc/libglib2.0-doc/gobject/GTypePlugin.html
+/usr/share/doc/libglib2.0-doc/gobject/gobject-Standard-Parameter-and-Value-Types.html
+/usr/share/doc/libglib2.0-doc/gobject/api-index-2-18.html
+/usr/share/doc/libglib2.0-doc/gobject/glib-genmarshal.html
+/usr/share/doc/libglib2.0-doc/gobject/api-index-2-2.html
+/usr/share/doc/libglib2.0-doc/gobject/howto-gobject-code.html
+/usr/share/doc/libglib2.0-doc/gobject/gobject-Type-Information.html
+/usr/share/doc/libglib2.0-doc/gobject/chapter-signal.html
+/usr/share/doc/libglib2.0-doc/gobject/api-index-2-14.html
+/usr/share/doc/libglib2.0-doc/gobject/howto-interface-override.html
+/usr/share/doc/libglib2.0-doc/gobject/GTypeModule.html
+/usr/share/doc/libglib2.0-doc/gobject/annotation-glossary.html
+/usr/share/doc/libglib2.0-doc/gobject/right-insensitive.png
+/usr/share/doc/libglib2.0-doc/gobject/gobject-Signals.html
+/usr/share/doc/libglib2.0-doc/gobject/chapter-gtype.html
+/usr/share/doc/libglib2.0-doc/gobject/tools-vala.html
+/usr/share/doc/libglib2.0-doc/gobject/tools-ginspector.html
+/usr/share/doc/libglib2.0-doc/gobject/api-index-2-32.html
+/usr/share/doc/libglib2.0-doc/gobject/gobject-GParamSpec.html
+/usr/share/doc/libglib2.0-doc/gobject/pt02.html
+/usr/share/doc/libglib2.0-doc/gobject/tools-refdb.html
+/usr/share/doc/libglib2.0-doc/gobject/gobject-Closures.html
+/usr/share/doc/libglib2.0-doc/gobject/rn01.html
+/usr/share/doc/libglib2.0-doc/gobject/api-index-2-10.html
+/usr/share/doc/libglib2.0-doc/gobject/api-index-2-34.html
+/usr/share/doc/libglib2.0-doc/gobject/gobject-Generic-values.html
+/usr/share/doc/libglib2.0-doc/gobject/howto-interface.html
+/usr/share/doc/libglib2.0-doc/gobject/home.png
+/usr/share/doc/libglib2.0-doc/gobject/api-index-deprecated.html
+/usr/share/doc/libglib2.0-doc/gobject/pr01.html
+/usr/share/doc/libglib2.0-doc/gobject/left.png
+/usr/share/doc/libglib2.0-doc/gobject/pt03.html
+/usr/share/doc/libglib2.0-doc/gobject/api-index-2-28.html
+/usr/share/doc/libglib2.0-doc/gobject/gobject-query.html
+/usr/share/doc/libglib2.0-doc/gobject/gobject-Varargs-Value-Collection.html
+/usr/share/doc/libglib2.0-doc/gobject/gobject-Value-arrays.html
+/usr/share/doc/libglib2.0-doc/gobject/api-index-2-8.html
+/usr/share/doc/libglib2.0-doc/gobject/up-insensitive.png
+/usr/share/doc/libglib2.0-doc/gobject/howto-gobject-destruction.html
+/usr/share/doc/libglib2.0-doc/gobject/gobject-The-Base-Object-Type.html
+/usr/share/doc/libglib2.0-doc/gobject/api-index-2-22.html
+/usr/share/doc/libglib2.0-doc/gobject/index.sgml
+/usr/share/doc/libglib2.0-doc/gobject/tools-gob.html
+/usr/share/doc/libglib2.0-doc/gobject/api-index-2-24.html
+/usr/share/doc/libglib2.0-doc/gobject/gobject-Boxed-Types.html
+/usr/share/doc/libglib2.0-doc/gobject/howto-gobject-construction.html
+/usr/share/doc/libglib2.0-doc/gobject/ch01s02.html
+/usr/share/doc/libglib2.0-doc/gobject/glue.png
+/usr/share/doc/libglib2.0-doc/gobject/right.png
+/usr/share/doc/libglib2.0-doc/gobject/chapter-intro.html
+/usr/share/doc/libglib2.0-doc/gobject/api-index-2-6.html
+/usr/share/doc/libglib2.0-doc/gobject/signal.html
+/usr/share/doc/libglib2.0-doc/gobject/api-index-2-30.html
+/usr/share/doc/libglib2.0-doc/gobject/api-index-2-12.html
+/usr/share/doc/libglib2.0-doc/gobject/gtype-non-instantiable.html
+/usr/share/doc/libglib2.0-doc/gobject/gtype-instantiable-classed.html
+/usr/share/doc/libglib2.0-doc/gobject/api-index-2-26.html
+/usr/share/doc/libglib2.0-doc/gobject/gobject.devhelp2.gz
+/usr/share/doc/libglib2.0-doc/gobject/gtype-conventions.html
+/usr/share/doc/libglib2.0-doc/gobject/gtype-non-instantiable-classed.html
+/usr/share/doc/libglib2.0-doc/gobject/howto-gobject.html
+/usr/share/doc/libglib2.0-doc/gobject/howto-signals.html
+/usr/share/doc/libglib2.0-doc/gobject/gobject-properties.html
+/usr/share/doc/libglib2.0-doc/gobject/howto-interface-prerequisite.html
+/usr/share/doc/libglib2.0-doc/gobject/up.png
+/usr/share/gtk-doc/html/gio
+/usr/share/gtk-doc/html/glib
+/usr/share/gtk-doc/html/gobject
+/usr/share/doc/libglib2.0-doc/gtk</code></pre>
+
+
+<h2 id="_4">瀏覽器觀看文件</h2>
+<pre class="code"><code class="language-sh">$ firefox /usr/share/doc/libglib2.0-doc/gio/index.html
+$ firefox /usr/share/doc/libglib2.0-doc/glib/index.html
+$ firefox /usr/share/doc/libglib2.0-doc/gobject/index.html</code></pre>
+          <aside class="copyright" role="note">
+            
+              Copyright (c) foreachsam &ndash;
+            
+            Documentation built with
+            <a href="http://www.mkdocs.org" target="_blank">MkDocs</a>
+            using the
+            <a href="http://squidfunk.github.io/mkdocs-material/" target="_blank">
+              Material
+            </a>
+            theme.
+          </aside>
+          
+            <footer class="footer">
+              
+  <nav class="pagination" aria-label="Footer">
+    <div class="previous">
+      
+        <a href="../libglib2.0-bin/" title="libglib2.0-bin">
+          <span class="direction">
+            上一頁
+          </span>
+          <div class="page">
+            <div class="button button-previous" role="button" aria-label="Previous">
+              <i class="icon icon-back"></i>
+            </div>
+            <div class="stretch">
+              <div class="title">
+                libglib2.0-bin
+              </div>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+    <div class="next">
+      
+        <a href="../../command/gsettings/" title="gsettings">
+          <span class="direction">
+            下一頁
+          </span>
+          <div class="page">
+            <div class="stretch">
+              <div class="title">
+                gsettings
+              </div>
+            </div>
+            <div class="button button-next" role="button" aria-label="Next">
+              <i class="icon icon-forward"></i>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+  </nav>
+
+            </footer>
+          
+        </div></article>
+      <div class="results" role="status" aria-live="polite">
+        <div class="scrollable">
+          <div class="wrapper">
+            <div class="meta"></div>
+            <div class="list"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      var base_url = '../../..';
+      var repo_id  = '';
+    </script>
+    <script src="../../../assets/javascripts/application-a10a824a49.js"></script>
+    
+    
+      <script>
+        (function(i,s,o,g,r,a,m){
+          i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||
+          []).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;
+          m.parentNode.insertBefore(a,m)
+        })(window, document,
+          'script', '//www.google-analytics.com/analytics.js', 'ga');
+        /* General initialization */
+        ga('create', 'UA-56999876-1', 'foreachsam.github.io');
+        ga('set', 'anonymizeIp', true);
+        ga('send', 'pageview');
+        /* Track outbound links */
+        var buttons = document.querySelectorAll('a');
+        Array.prototype.map.call(buttons, function(item) {
+          if (item.host != window.location.host) {
+            item.addEventListener('click', function() {
+              var action = item.getAttribute('data-action') || 'follow';
+              ga('send', 'event', 'outbound', action, item.href);
+            });
+          }
+        });
+      </script>
+    
+  </body>
+</html>
