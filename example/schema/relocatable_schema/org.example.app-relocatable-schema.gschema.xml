@@ -1,0 +1,31 @@
+<schemalist>
+	<schema id="org.example.app-relocatable-schema" gettext-domain="app-app-relocatable-schema">
+
+		<key name="greeting" type="s">
+			<default l10n="messages">"Hello"</default>
+			<summary>A greeting</summary>
+			<description>
+				Greeting!
+			</description>
+		</key>
+
+		<key name="count" type="i">
+			<default>99</default>
+			<summary>counter</summary>
+			<description>
+				Counter
+			</description>
+		</key>
+
+		<key name="allow" type="b">
+			<default>false</default>
+			<summary>Is allowed?</summary>
+			<description>
+				Allow?
+			</description>
+		</key>
+
+
+	</schema>
+</schemalist>
+

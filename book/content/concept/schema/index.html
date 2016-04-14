@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="no-js ie6"><![endif]-->
+<!--[if IE 7 ]><html class="no-js ie7"><![endif]-->
+<!--[if IE 8 ]><html class="no-js ie8"><![endif]-->
+<!--[if IE 9 ]><html class="no-js ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    
+      
+        <title>schema - Gsettings 使用筆記</title>
+      
+      
+      
+        <link rel="canonical" href="https://foreachsam.github.io/book-util-gsettings/book/content/concept/schema/">
+      
+      
+        <meta name="author" content="foreachsam">
+      
+    
+    <meta property="og:url" content="https://foreachsam.github.io/book-util-gsettings/book/content/concept/schema/">
+    <meta property="og:title" content="Gsettings 使用筆記">
+    <meta property="og:image" content="https://foreachsam.github.io/book-util-gsettings/book/content/concept/schema//../../../">
+    <meta name="apple-mobile-web-app-title" content="Gsettings 使用筆記">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="../../../assets/images/favicon-e565ddfa3b.ico">
+    <link rel="icon" type="image/x-icon" href="../../../assets/images/favicon-e565ddfa3b.ico">
+    <style>
+      @font-face {
+      	font-family: 'Icon';
+      	src: url('../../../assets/fonts/icon.eot?52m981');
+      	src: url('../../../assets/fonts/icon.eot?#iefix52m981')
+               format('embedded-opentype'),
+      		   url('../../../assets/fonts/icon.woff?52m981')
+               format('woff'),
+      		   url('../../../assets/fonts/icon.ttf?52m981')
+               format('truetype'),
+      		   url('../../../assets/fonts/icon.svg?52m981#icon')
+               format('svg');
+      	font-weight: normal;
+      	font-style: normal;
+      }
+    </style>
+    <link rel="stylesheet" href="../../../assets/stylesheets/application-b64b728552.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/palettes-05ab2406df.css">
+    
+    
+      
+      
+      
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Mono">
+      <style>
+        body, input {
+          font-family: 'Roboto', Helvetica, Arial, sans-serif;
+        }
+        pre, code {
+          font-family: 'Roboto Mono', 'Courier New', 'Courier', monospace;
+        }
+      </style>
+    
+    
+    <script src="../../../assets/javascripts/modernizr-4ab42b99fd.js"></script>
+    
+  </head>
+  
+  
+  
+  <body class="palette-primary-green palette-accent-light-green">
+    
+    <div class="backdrop">
+      <div class="backdrop-paper"></div>
+    </div>
+    <input class="toggle" type="checkbox" id="toggle-drawer">
+    <input class="toggle" type="checkbox" id="toggle-search">
+    <label class="toggle-button overlay" for="toggle-drawer"></label>
+    <header class="header">
+      <nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        
+          <span class="path">
+            
+              
+                concept <i class="icon icon-link"></i>
+              
+            
+          </span>
+        
+        schema
+      </div>
+    </div>
+    
+    
+      
+      <div class="button button-github" role="button" aria-label="GitHub">
+        <a href="https://github.com/foreachsam/book-util-gsettings" title="@foreachsam/book-util-gsettings on GitHub" target="_blank" class="toggle-button icon icon-github"></a>
+      </div>
+    
+    <div class="button button-search" role="button" aria-label="Search">
+      <label class="toggle-button icon icon-search" title="Search" for="toggle-search"></label>
+    </div>
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" aria-label="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+    </header>
+    <main class="main">
+      
+      <div class="drawer">
+        <nav aria-label="Navigation">
+  
+  <a href="/" class="project">
+    <div class="banner">
+      
+      <div class="name">
+        <strong>Gsettings 使用筆記 </strong>
+        
+      </div>
+    </div>
+  </a>
+  <div class="scrollable">
+    <div class="wrapper">
+      
+      <div class="toc">
+        <ul>
+          
+            
+  <li>
+    <a class="" title="首頁" href="../../..">
+      首頁
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <span class="section">參考文件</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="manual" href="../../referance/manual/">
+      manual
+    </a>
+    
+  </li>
+
+      
+    </ul>
+  </li>
+
+          
+            
+  <li>
+    <span class="section">deb package</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="index" href="../../deb-package/">
+      index
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="libglib2.0-bin" href="../../deb-package/libglib2.0-bin/">
+      libglib2.0-bin
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="libglib2.0-doc" href="../../deb-package/libglib2.0-doc/">
+      libglib2.0-doc
+    </a>
+    
+  </li>
+
+      
+    </ul>
+  </li>
+
+          
+            
+  <li>
+    <span class="section">command</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="gsettings" href="../../command/gsettings/">
+      gsettings
+    </a>
+    
+  </li>
+
+      
+    </ul>
+  </li>
+
+          
+            
+  <li>
+    <span class="section">concept</span>
+    <ul>
+      
+        
+  <li>
+    <a class="current" title="schema" href="./">
+      schema
+    </a>
+    
+      
+        
+      
+      
+        <ul>
+          
+            <li class="anchor">
+              <a title="產生 gschema.xml" href="#gschemaxml">
+                產生 gschema.xml
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="放至「/usr/share/glib-2.0/schemas/」" href="#usrshareglib-20schemas">
+                放至「/usr/share/glib-2.0/schemas/」
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="編譯 schemas" href="#schemas">
+                編譯 schemas
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="gsettings 使用範例" href="#gsettings">
+                gsettings 使用範例
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="dconf 使用範例" href="#dconf">
+                dconf 使用範例
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="關於 ~/.config/dconf/user" href="#configdconfuser">
+                關於 ~/.config/dconf/user
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="解除 schema" href="#schema_1">
+                解除 schema
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="相關檔案" href="#_1">
+                相關檔案
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="小結" href="#_2">
+                小結
+              </a>
+            </li>
+          
+        </ul>
+      
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="relocatable schema" href="../relocatable-schema/">
+      relocatable schema
+    </a>
+    
+  </li>
+
+      
+    </ul>
+  </li>
+
+          
+        </ul>
+        
+          <hr>
+          <span class="section">The author</span>
+          <ul>
+            
+            
+              
+              <li>
+                <a href="https://github.com/foreachsam/book-util-gsettings" target="_blank" title="@foreachsam/book-util-gsettings on GitHub">
+                  @foreachsam/book-util-gsettings on GitHub
+                </a>
+              </li>
+            
+          </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+      </div>
+      <article class="article">
+        <div class="wrapper">
+          
+          <h1 id="schema">Schema</h1>
+<h2 id="gschemaxml">產生 gschema.xml</h2>
+<p>執行下面指令，產生「org.example.app-schema.gschema.xml」</p>
+<pre class="code"><code class="language-sh">cat &gt; org.example.app-schema.gschema.xml &lt;&lt;EOF
+&lt;schemalist&gt;
+    &lt;schema id=&quot;org.example.app-schema&quot; path=&quot;/org/example/app-schema/&quot; gettext-domain=&quot;app-schema&quot;&gt;
+
+        &lt;key name=&quot;greeting&quot; type=&quot;s&quot;&gt;
+            &lt;default l10n=&quot;messages&quot;&gt;&quot;Hello&quot;&lt;/default&gt;
+            &lt;summary&gt;A greeting&lt;/summary&gt;
+            &lt;description&gt;
+                Greeting!
+            &lt;/description&gt;
+        &lt;/key&gt;
+
+        &lt;key name=&quot;count&quot; type=&quot;i&quot;&gt;
+            &lt;default&gt;99&lt;/default&gt;
+            &lt;summary&gt;counter&lt;/summary&gt;
+            &lt;description&gt;
+                Counter
+            &lt;/description&gt;
+        &lt;/key&gt;
+
+        &lt;key name=&quot;allow&quot; type=&quot;b&quot;&gt;
+            &lt;default&gt;false&lt;/default&gt;
+            &lt;summary&gt;Is allowed?&lt;/summary&gt;
+            &lt;description&gt;
+                Allow?
+            &lt;/description&gt;
+        &lt;/key&gt;
+
+
+    &lt;/schema&gt;
+&lt;/schemalist&gt;
+
+EOF</code></pre>
+
+
+<p>執行下面指令，觀看「org.example.app-schema.gschema.xml」的內容</p>
+<pre class="code"><code>$ cat org.example.app-schema.gschema.xml</code></pre>
+
+
+<p>可以看到「org.example.app-schema.gschema.xml」的內容如下</p>
+<pre class="code"><code>&lt;schemalist&gt;
+        &lt;schema id=&quot;org.example.app-schema&quot; path=&quot;/org/example/app-schema/&quot; gettext-domain=&quot;app-schema&quot;&gt;
+
+                &lt;key name=&quot;greeting&quot; type=&quot;s&quot;&gt;
+                        &lt;default l10n=&quot;messages&quot;&gt;&quot;Hello&quot;&lt;/default&gt;
+                        &lt;summary&gt;A greeting&lt;/summary&gt;
+                        &lt;description&gt;
+                                Greeting!
+                        &lt;/description&gt;
+                &lt;/key&gt;
+
+                &lt;key name=&quot;count&quot; type=&quot;i&quot;&gt;
+                        &lt;default&gt;99&lt;/default&gt;
+                        &lt;summary&gt;counter&lt;/summary&gt;
+                        &lt;description&gt;
+                                Counter
+                        &lt;/description&gt;
+                &lt;/key&gt;
+
+                &lt;key name=&quot;allow&quot; type=&quot;b&quot;&gt;
+                        &lt;default&gt;false&lt;/default&gt;
+                        &lt;summary&gt;Is allowed?&lt;/summary&gt;
+                        &lt;description&gt;
+                                Allow?
+                        &lt;/description&gt;
+                &lt;/key&gt;
+
+
+        &lt;/schema&gt;
+&lt;/schemalist&gt;</code></pre>
+
+
+<h2 id="usrshareglib-20schemas">放至「/usr/share/glib-2.0/schemas/」</h2>
+<p>執行下面指令，將「org.example.app-schema.gschema.xml」放到「/usr/share/glib-2.0/schemas/」</p>
+<pre class="code"><code class="language-sh">$ sudo cp org.example.app-schema.gschema.xml /usr/share/glib-2.0/schemas/</code></pre>
+
+
+<h2 id="schemas">編譯 schemas</h2>
+<p>執行下面指令，將「/usr/share/glib-2.0/schemas/」裡面的「.gschema.xml」編譯成「/usr/share/glib-2.0/schemas/gschemas.compiled」</p>
+<pre class="code"><code class="language-sh">$ sudo glib-compile-schemas /usr/share/glib-2.0/schemas/</code></pre>
+
+
+<h2 id="gsettings">gsettings 使用範例</h2>
+<pre class="code"><code class="language-sh">$ gsettings list-schemas | grep app-schema</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>org.example.app-schema</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ gsettings list-recursively | grep app-schema</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>org.example.app-schema allow false
+org.example.app-schema count 99
+org.example.app-schema greeting 'Hello'</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ gsettings list-keys org.example.app-schema</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>allow
+count
+greeting</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ gsettings get org.example.app-schema greeting</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code class="language-sh">'Hello'</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ gsettings set org.example.app-schema greeting hi</code></pre>
+
+
+<p>然後再執行</p>
+<pre class="code"><code class="language-sh">$ gsettings get org.example.app-schema greeting</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>'hi'</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ gsettings reset org.example.app-schema greeting</code></pre>
+
+
+<p>然後再執行</p>
+<pre class="code"><code class="language-sh">$ gsettings get org.example.app-schema greeting</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>'Hello'</code></pre>
+
+
+<h2 id="dconf">dconf 使用範例</h2>
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ gsettings set org.example.app-schema greeting hi</code></pre>
+
+
+<p>然後再執行</p>
+<pre class="code"><code class="language-sh">$ gsettings get org.example.app-schema greeting</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>'hi'</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ dconf dump / | grep org/example/app-schema -A 2</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>[org/example/app-schema]
+greeting='hi'</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code>$ dconf list /org/example/app-schema/</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>greeting</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ dconf read /org/example/app-schema/greeting</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>'hi'</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ dconf write /org/example/app-schema/count 88888</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ dconf read /org/example/app-schema/count</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>88888</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ gsettings get org.example.app-schema count</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>88888</code></pre>
+
+
+<h2 id="configdconfuser">關於 ~/.config/dconf/user</h2>
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ strings ~/.config/dconf/user | grep count</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>count</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ strings ~/.config/dconf/user | grep greeting</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>sgreeting</code></pre>
+
+
+<pre class="code"><code class="language-sh">$ grep hi ~/.config/dconf/user</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>Binary file /home/sam/.config/dconf/user matches</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">gsettings reset org.example.app-schema greeting
+gsettings reset org.example.app-schema count</code></pre>
+
+
+<p>然後</p>
+<pre class="code"><code class="language-sh">$ dconf dump / | grep org/example/app-schema</code></pre>
+
+
+<p>沒有顯示任何結果，直接出現下一個提示字元。</p>
+<pre class="code"><code class="language-sh">$ strings /usr/share/glib-2.0/schemas/gschemas.compiled | grep greeting</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>greeting</code></pre>
+
+
+<h2 id="schema_1">解除 schema</h2>
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ sudo rm /usr/share/glib-2.0/schemas/org.example.app-schema.gschema.xml</code></pre>
+
+
+<p>再執行</p>
+<pre class="code"><code class="language-sh">$ sudo glib-compile-schemas /usr/share/glib-2.0/schemas/</code></pre>
+
+
+<p>測試是否解除</p>
+<pre class="code"><code class="language-sh">$ gsettings get org.example.app-schema greeting</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>No such schema 'org.example.app-schema'</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ gsettings list-schemas | grep org.example.app-schema</code></pre>
+
+
+<p>和執行</p>
+<pre class="code"><code>$ gsettings list-recursively | grep org.example.app-schema</code></pre>
+
+
+<p>都沒有顯示任何結果，直接出現下一個提示字元。</p>
+<h2 id="_1">相關檔案</h2>
+<ul>
+<li>/usr/share/glib-2.0/schemas/org.example.app-schema.gschema.xml</li>
+<li>/usr/share/glib-2.0/schemas/gschemas.compiled</li>
+<li>~/.config/dconf/user</li>
+</ul>
+<h2 id="_2">小結</h2>
+<p>從以上的實驗，我個人推測，歸納以下規則</p>
+<ul>
+<li>執行「gsettings get」，會先從「~/.config/dconf/user」這裡找資料，</li>
+<li>若沒有找到，則「/usr/share/glib-2.0/schemas/gschemas.compiled」找。</li>
+<li>「/usr/share/glib-2.0/schemas/gschemas.compiled」紀錄的是預設值，</li>
+<li>若有透過「gsettings set」更改值，則會紀錄新到「~/.config/dconf/user」，</li>
+<li>若是「gsettings reset」，則會將「~/.config/dconf/user」的「該紀錄(key和value)」刪除。</li>
+</ul>
+          <aside class="copyright" role="note">
+            
+              Copyright (c) foreachsam &ndash;
+            
+            Documentation built with
+            <a href="http://www.mkdocs.org" target="_blank">MkDocs</a>
+            using the
+            <a href="http://squidfunk.github.io/mkdocs-material/" target="_blank">
+              Material
+            </a>
+            theme.
+          </aside>
+          
+            <footer class="footer">
+              
+  <nav class="pagination" aria-label="Footer">
+    <div class="previous">
+      
+        <a href="../../command/gsettings/" title="gsettings">
+          <span class="direction">
+            上一頁
+          </span>
+          <div class="page">
+            <div class="button button-previous" role="button" aria-label="Previous">
+              <i class="icon icon-back"></i>
+            </div>
+            <div class="stretch">
+              <div class="title">
+                gsettings
+              </div>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+    <div class="next">
+      
+        <a href="../relocatable-schema/" title="relocatable schema">
+          <span class="direction">
+            下一頁
+          </span>
+          <div class="page">
+            <div class="stretch">
+              <div class="title">
+                relocatable schema
+              </div>
+            </div>
+            <div class="button button-next" role="button" aria-label="Next">
+              <i class="icon icon-forward"></i>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+  </nav>
+
+            </footer>
+          
+        </div></article>
+      <div class="results" role="status" aria-live="polite">
+        <div class="scrollable">
+          <div class="wrapper">
+            <div class="meta"></div>
+            <div class="list"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      var base_url = '../../..';
+      var repo_id  = '';
+    </script>
+    <script src="../../../assets/javascripts/application-a10a824a49.js"></script>
+    
+    
+      <script>
+        (function(i,s,o,g,r,a,m){
+          i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||
+          []).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;
+          m.parentNode.insertBefore(a,m)
+        })(window, document,
+          'script', '//www.google-analytics.com/analytics.js', 'ga');
+        /* General initialization */
+        ga('create', 'UA-56999876-1', 'foreachsam.github.io');
+        ga('set', 'anonymizeIp', true);
+        ga('send', 'pageview');
+        /* Track outbound links */
+        var buttons = document.querySelectorAll('a');
+        Array.prototype.map.call(buttons, function(item) {
+          if (item.host != window.location.host) {
+            item.addEventListener('click', function() {
+              var action = item.getAttribute('data-action') || 'follow';
+              ga('send', 'event', 'outbound', action, item.href);
+            });
+          }
+        });
+      </script>
+    
+  </body>
+</html>
