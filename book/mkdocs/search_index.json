@@ -17,7 +17,7 @@
         },
         {
             "location": "/content/referance/manual/",
-            "text": "manual\n\n\n\u95b1\u8b80\u6587\u4ef6\n\n\n\n\n$ man \ngsettings\n\n\n$ man \nglib-compile-schemas",
+            "text": "manual\n\n\n\u95b1\u8b80\u6587\u4ef6\n\n\n\n\n$ man \ngsettings\n\n\n$ man \nglib-compile-schemas\n\n\nhttps://developer.gnome.org/GSettings/\n\n\nhttps://developer.gnome.org/gio/stable/GSettings.html\n\n\nhttps://developer.gnome.org/gio/stable/gsettings-tool.html\n\n\nhttps://developer.gnome.org/gio/stable/glib-compile-schemas.html\n\n\nhttps://developer.gnome.org/gio/stable/ch34s06.html\n\n\nhttps://wiki.gnome.org/Projects/Vala/GSettingsSample\n\n\nhttps://wiki.gnome.org/Projects/dconf\n\n\nhttps://wiki.gnome.org/Projects/dconf/SystemAdministrators",
             "title": "manual"
         },
         {
@@ -27,7 +27,7 @@
         },
         {
             "location": "/content/referance/manual/#_1",
-            "text": "$ man  gsettings  $ man  glib-compile-schemas",
+            "text": "$ man  gsettings  $ man  glib-compile-schemas  https://developer.gnome.org/GSettings/  https://developer.gnome.org/gio/stable/GSettings.html  https://developer.gnome.org/gio/stable/gsettings-tool.html  https://developer.gnome.org/gio/stable/glib-compile-schemas.html  https://developer.gnome.org/gio/stable/ch34s06.html  https://wiki.gnome.org/Projects/Vala/GSettingsSample  https://wiki.gnome.org/Projects/dconf  https://wiki.gnome.org/Projects/dconf/SystemAdministrators",
             "title": "\u95b1\u8b80\u6587\u4ef6"
         },
         {
