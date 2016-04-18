@@ -2,12 +2,12 @@
     "docs": [
         {
             "location": "/",
-            "text": "Gsettings \u4f7f\u7528\u7b46\u8a18\n\n\n\u9019\u662f\u4f7f\u7528\u300c\nGsettings\n\u300d\u7684\u7c21\u55ae\u7d00\u9304\u3002\n\n\n\u74b0\u5883\n\n\n\n\nXubuntu 14.04 64\u4f4d\u5143",
+            "text": "Gsettings \u4f7f\u7528\u7b46\u8a18\n\n\n\u9019\u662f\u4f7f\u7528\u300c\nGsettings\n\u300d\u7684\u7c21\u55ae\u7d00\u9304\u3002\n\n\n\u59ca\u59b9\u7bc7\u8acb\u53c3\u8003\u300c\nDConf \u4f7f\u7528\u7b46\u8a18\n\u300d\u3002\n\n\n\u74b0\u5883\n\n\n\n\nXubuntu 14.04 64\u4f4d\u5143",
             "title": "\u9996\u9801"
         },
         {
             "location": "/#gsettings",
-            "text": "\u9019\u662f\u4f7f\u7528\u300c Gsettings \u300d\u7684\u7c21\u55ae\u7d00\u9304\u3002",
+            "text": "\u9019\u662f\u4f7f\u7528\u300c Gsettings \u300d\u7684\u7c21\u55ae\u7d00\u9304\u3002  \u59ca\u59b9\u7bc7\u8acb\u53c3\u8003\u300c DConf \u4f7f\u7528\u7b46\u8a18 \u300d\u3002",
             "title": "Gsettings \u4f7f\u7528\u7b46\u8a18"
         },
         {
