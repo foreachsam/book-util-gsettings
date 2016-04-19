@@ -251,6 +251,58 @@
         
       
       
+        <ul>
+          
+            <li class="anchor">
+              <a title="產生 gschema.xml" href="#gschemaxml">
+                產生 gschema.xml
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="放至「/usr/share/glib-2.0/schemas/」" href="#usrshareglib-20schemas">
+                放至「/usr/share/glib-2.0/schemas/」
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="編譯 schemas" href="#schemas">
+                編譯 schemas
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="gsettings 使用範例" href="#gsettings">
+                gsettings 使用範例
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="dconf 使用範例" href="#dconf">
+                dconf 使用範例
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="關於 ~/.config/dconf/user" href="#configdconfuser">
+                關於 ~/.config/dconf/user
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="解除 schema" href="#schema">
+                解除 schema
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="相關檔案" href="#_1">
+                相關檔案
+              </a>
+            </li>
+          
+        </ul>
+      
     
   </li>
 
@@ -284,6 +336,372 @@
         <div class="wrapper">
           
           <h1 id="relocatable-schema">Relocatable Schema</h1>
+<p>何謂「Relocatable Schema」，請參考「<a href="https://developer.gnome.org/gio/stable/GSettings.html">這一頁</a>」的裡面的一段說明。</p>
+<p>最簡單的辨別，就是「<code>&lt;schema&gt;</code>」沒有設定「<code>path=""</code>」，就會被視為「Relocatable Schema」。</p>
+<h2 id="gschemaxml">產生 gschema.xml</h2>
+<p>執行下面指令，產生「org.example.app-relocatable-schema.gschema.xml」</p>
+<pre class="code"><code class="language-sh">cat &gt; org.example.app-relocatable-schema.gschema.xml &lt;&lt;EOF
+&lt;schemalist&gt;
+    &lt;schema id=&quot;org.example.app-relocatable-schema&quot; gettext-domain=&quot;app-app-relocatable-schema&quot;&gt;
+
+        &lt;key name=&quot;greeting&quot; type=&quot;s&quot;&gt;
+            &lt;default l10n=&quot;messages&quot;&gt;&quot;Hello&quot;&lt;/default&gt;
+            &lt;summary&gt;A greeting&lt;/summary&gt;
+            &lt;description&gt;
+                Greeting!
+            &lt;/description&gt;
+        &lt;/key&gt;
+
+        &lt;key name=&quot;count&quot; type=&quot;i&quot;&gt;
+            &lt;default&gt;99&lt;/default&gt;
+            &lt;summary&gt;counter&lt;/summary&gt;
+            &lt;description&gt;
+                Counter
+            &lt;/description&gt;
+        &lt;/key&gt;
+
+        &lt;key name=&quot;allow&quot; type=&quot;b&quot;&gt;
+            &lt;default&gt;false&lt;/default&gt;
+            &lt;summary&gt;Is allowed?&lt;/summary&gt;
+            &lt;description&gt;
+                Allow?
+            &lt;/description&gt;
+        &lt;/key&gt;
+
+
+    &lt;/schema&gt;
+&lt;/schemalist&gt;
+
+EOF</code></pre>
+
+
+<p>執行下面指令，觀看「org.example.app-relocatable-schema.gschema.xml」的內容</p>
+<pre class="code"><code>$ cat org.example.app-relocatable-schema.gschema.xml</code></pre>
+
+
+<p>可以看到「org.example.app-relocatable-schema.gschema.xml」的內容如下</p>
+<pre class="code"><code>&lt;schemalist&gt;
+    &lt;schema id=&quot;org.example.app-relocatable-schema&quot; gettext-domain=&quot;app-app-relocatable-schema&quot;&gt;
+
+        &lt;key name=&quot;greeting&quot; type=&quot;s&quot;&gt;
+            &lt;default l10n=&quot;messages&quot;&gt;&quot;Hello&quot;&lt;/default&gt;
+            &lt;summary&gt;A greeting&lt;/summary&gt;
+            &lt;description&gt;
+                Greeting!
+            &lt;/description&gt;
+        &lt;/key&gt;
+
+        &lt;key name=&quot;count&quot; type=&quot;i&quot;&gt;
+            &lt;default&gt;99&lt;/default&gt;
+            &lt;summary&gt;counter&lt;/summary&gt;
+            &lt;description&gt;
+                Counter
+            &lt;/description&gt;
+        &lt;/key&gt;
+
+        &lt;key name=&quot;allow&quot; type=&quot;b&quot;&gt;
+            &lt;default&gt;false&lt;/default&gt;
+            &lt;summary&gt;Is allowed?&lt;/summary&gt;
+            &lt;description&gt;
+                Allow?
+            &lt;/description&gt;
+        &lt;/key&gt;
+
+
+    &lt;/schema&gt;
+&lt;/schemalist&gt;</code></pre>
+
+
+<h2 id="usrshareglib-20schemas">放至「/usr/share/glib-2.0/schemas/」</h2>
+<p>執行下面指令，將「org.example.app-relocatable-schema.gschema.xml」放到「/usr/share/glib-2.0/schemas/」</p>
+<pre class="code"><code class="language-sh">$ sudo cp org.example.app-relocatable-schema.gschema.xml /usr/share/glib-2.0/schemas/</code></pre>
+
+
+<h2 id="schemas">編譯 schemas</h2>
+<p>執行下面指令，將「/usr/share/glib-2.0/schemas/」裡面的「.gschema.xml」編譯成「/usr/share/glib-2.0/schemas/gschemas.compiled」</p>
+<pre class="code"><code class="language-sh">$ sudo glib-compile-schemas /usr/share/glib-2.0/schemas/</code></pre>
+
+
+<h2 id="gsettings">gsettings 使用範例</h2>
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ gsettings list-relocatable-schemas | grep app-relocatable-schema</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>org.example.app-relocatable-schema</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ gsettings list-recursively | grep app-relocatable-schema</code></pre>
+
+
+<p>沒有顯示任何結果</p>
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ gsettings list-keys org.example.app-relocatable-schema</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>Schema 'org.example.app-relocatable-schema' is relocatable (path must be specified)</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ gsettings list-keys org.example.app-relocatable-schema:/</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>allow
+count
+greeting</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ gsettings get org.example.app-relocatable-schema:/ greeting</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>'Hello'</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ gsettings get org.example.app-relocatable-schema:/org/example/app-relocatable-schema/demo-1 greeting</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code class="language-sh">Path must end with a slash (/)</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ gsettings get org.example.app-relocatable-schema:/org/example/app-relocatable-schema/demo-1/ greeting</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>'Hello'</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ gsettings get org.example.app-relocatable-schema:/org/example/app-relocatable-schema/demo-2/ greeting</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>'Hello'</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ gsettings set org.example.app-relocatable-schema:/org/example/app-relocatable-schema/demo-1/ greeting hi_1</code></pre>
+
+
+<p>再執行</p>
+<pre class="code"><code class="language-sh">$ gsettings get org.example.app-relocatable-schema:/org/example/app-relocatable-schema/demo-1/ greeting</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>'hi_1'</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ gsettings get org.example.app-relocatable-schema:/org/example/app-relocatable-schema/demo-2/ greeting</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>'Hello'</code></pre>
+
+
+<p>簡單的說，也就是「Relocatable Schema」根據「Path」可以有不同的「副本」。</p>
+<h2 id="dconf">dconf 使用範例</h2>
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ gsettings set org.example.app-relocatable-schema:/org/example/app-relocatable-schema/demo-2/ greeting hi_2</code></pre>
+
+
+<p>再執行</p>
+<pre class="code"><code class="language-sh">$ gsettings get org.example.app-relocatable-schema:/org/example/app-relocatable-schema/demo-2/ greeting</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>'hi_2'</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ dconf dump / | grep org/example/app-relocatable-schema -A 2</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>[org/example/app-relocatable-schema/demo-2]
+greeting='hi_2'
+
+[org/example/app-relocatable-schema/demo-1]
+greeting='hi_1'</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code>$ dconf list /org/example/app-relocatable-schema/</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>demo-2/
+demo-1/</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code>$ dconf list /org/example/app-relocatable-schema/demo-1/</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>greeting</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ dconf read /org/example/app-relocatable-schema/demo-1/greeting</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>'hi_1'</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ dconf read /org/example/app-relocatable-schema/demo-2/greeting</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>'hi_2'</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ dconf write /org/example/app-relocatable-schema/demo-1/count 88888</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ dconf read /org/example/app-relocatable-schema/demo-1/count</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>88888</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ gsettings get org.example.app-relocatable-schema:/org/example/app-relocatable-schema/demo-1/ count</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>88888</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ dconf read /org/example/app-relocatable-schema/demo-3/count</code></pre>
+
+
+<p>沒有顯示任何結果</p>
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ gsettings get org.example.app-relocatable-schema:/org/example/app-relocatable-schema/demo-3/ count</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>99</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ dconf write /org/example/app-relocatable-schema/demo-3/count 77777</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ gsettings get org.example.app-relocatable-schema:/org/example/app-relocatable-schema/demo-3/ count</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>77777</code></pre>
+
+
+<h2 id="configdconfuser">關於 ~/.config/dconf/user</h2>
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ strings ~/.config/dconf/user | grep count</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>count
+count
+icount</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ strings ~/.config/dconf/user | grep greeting</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>igreeting
+sgreeting
+igreeting
+bgreeting</code></pre>
+
+
+<pre class="code"><code class="language-sh">$ grep hi ~/.config/dconf/user</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>Binary file /home/sam/.config/dconf/user matches</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ dconf dump / | grep org/example/app-relocatable-schema -A 2</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>[org/example/app-relocatable-schema/demo-3]
+count=77777
+
+[org/example/app-relocatable-schema/demo-2]
+greeting='hi_2'
+
+[org/example/app-relocatable-schema/demo-1]
+greeting='hi_1'
+count=88888</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">gsettings reset org.example.app-relocatable-schema:/org/example/app-relocatable-schema/demo-1/ greeting
+gsettings reset org.example.app-relocatable-schema:/org/example/app-relocatable-schema/demo-1/ count
+gsettings reset org.example.app-relocatable-schema:/org/example/app-relocatable-schema/demo-2/ greeting
+gsettings reset org.example.app-relocatable-schema:/org/example/app-relocatable-schema/demo-3/ count</code></pre>
+
+
+<p>然後</p>
+<pre class="code"><code class="language-sh">$ dconf dump / | grep org/example/app-relocatable-schema -A 2</code></pre>
+
+
+<p>沒有顯示任何結果，直接出現下一個提示字元。</p>
+<pre class="code"><code class="language-sh">$ strings /usr/share/glib-2.0/schemas/gschemas.compiled | grep greeting</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>greeting</code></pre>
+
+
+<h2 id="schema">解除 schema</h2>
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ sudo rm /usr/share/glib-2.0/schemas/org.example.app-relocatable-schema.gschema.xml</code></pre>
+
+
+<p>再執行</p>
+<pre class="code"><code class="language-sh">$ sudo glib-compile-schemas /usr/share/glib-2.0/schemas/</code></pre>
+
+
+<p>測試是否解除</p>
+<pre class="code"><code class="language-sh">$ gsettings get org.example.app-relocatable-schema:/ greeting</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>No such schema 'org.example.app-relocatable-schema'</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ gsettings list-relocatable-schemas | grep org.example.app-relocatable-schema</code></pre>
+
+
+<p>沒有顯示任何結果，直接出現下一個提示字元。</p>
+<h2 id="_1">相關檔案</h2>
+<ul>
+<li>/usr/share/glib-2.0/schemas/org.example.app-relocatable-schema.gschema.xml</li>
+<li>/usr/share/glib-2.0/schemas/gschemas.compiled</li>
+<li>~/.config/dconf/user</li>
+</ul>
           <aside class="copyright" role="note">
             
               Copyright (c) foreachsam &ndash;
