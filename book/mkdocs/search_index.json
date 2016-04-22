@@ -279,6 +279,26 @@
             "location": "/content/case/gedit/preferences-encodings/#xubuntu-1404",
             "text": "\u57f7\u884c  $ gsettings list-recursively | grep gedit | grep encodings  \u986f\u793a  org.gnome.gedit.preferences.encodings auto-detected ['UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16']\norg.gnome.gedit.preferences.encodings shown-in-menu ['ISO-8859-15']\norg.gnome.gedit.preferences.encodings auto-detected ['UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16']\norg.gnome.gedit.preferences.encodings shown-in-menu ['ISO-8859-15']\norg.gnome.gedit.preferences.encodings auto-detected ['UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16']\norg.gnome.gedit.preferences.encodings shown-in-menu ['ISO-8859-15']  \u89c0\u770b\u76ee\u524d\u7684\u8a2d\u5b9a\u503c  $ gsettings get org.gnome.gedit.preferences.encodings auto-detected  \u986f\u793a  ['UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16']  \u8a2d\u5b9a\u8a8d\u5f97\u5176\u4ed6\u4e2d\u6587\u76f8\u95dc\u7de8\u78bc  $ gsettings set org.gnome.gedit.preferences.encodings auto-detected  ['UTF-8', 'BIG5', 'BIG5-HKSCS', 'EUC-TW', 'GB18030', 'GB2312', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16']  \u89c0\u770b\u8a2d\u5b9a\u5f8c\u7684\u503c  $ gsettings get org.gnome.gedit.preferences.encodings auto-detected  \u986f\u793a  ['UTF-8', 'BIG5', 'BIG5-HKSCS', 'EUC-TW', 'GB18030', 'GB2312', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16']  \u6062\u5fa9\u9810\u8a2d\u503c  $ gsettings reset org.gnome.gedit.preferences.encodings auto-detected  \u627e\u5c0b\u76f8\u95dc\u7684\u300cschema\u6a94\u300d  $ grep auto-detected /usr/share/glib-2.0/schemas/org.gnome.gedit.*  \u986f\u793a  /usr/share/glib-2.0/schemas/org.gnome.gedit.gschema.xml:     key name= auto-detected  type= as  \u986f\u793a\u66f4\u591a\u5167\u5bb9  $ grep auto-detected /usr/share/glib-2.0/schemas/org.gnome.gedit.* -A17  \u518d\u6b21\u8a2d\u5b9a  $ gsettings set org.gnome.gedit.preferences.encodings auto-detected  ['UTF-8', 'BIG5', 'BIG5-HKSCS', 'EUC-TW', 'GB18030', 'GB2312', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16']  \u89c0\u770b dconf \u8a2d\u5b9a\u503c  $ dconf dump / | grep auto-detected  \u986f\u793a  auto-detected=['UTF-8', 'BIG5', 'BIG5-HKSCS', 'EUC-TW', 'GB18030', 'GB2312', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16']  \u57f7\u884c  $ dconf dump / | grep gedit  \u986f\u793a  [org/gnome/gedit/preferences/encodings]\n[org/gnome/gedit/preferences/ui]\n[org/gnome/gedit/plugins/filebrowser]\n[org/gnome/gedit/plugins]\n[org/gnome/gedit/state/window]  \u57f7\u884c  $ dconf list /org/gnome/gedit/preferences/encodings/  \u986f\u793a  auto-detected  \u57f7\u884c  $ dconf read /org/gnome/gedit/preferences/encodings/auto-detected  \u986f\u793a  ['UTF-8', 'BIG5', 'BIG5-HKSCS', 'EUC-TW', 'GB18030', 'GB2312', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16']",
             "title": "Xubuntu 14.04"
+        },
+        {
+            "location": "/content/case/nm-applet/show-applet/",
+            "text": "nm-applet\n\n\n$ gsettings list-recursively | grep nm-applet\n\n\n\n\n\u986f\u793a\n\n\norg.gnome.nm-applet stamp 0\norg.gnome.nm-applet disable-disconnected-notifications false\norg.gnome.nm-applet disable-vpn-notifications false\norg.gnome.nm-applet disable-connected-notifications false\norg.gnome.nm-applet suppress-wireless-networks-available false\norg.gnome.nm-applet show-applet true\norg.gnome.nm-applet disable-wifi-create false\n\n\n\n\n\u96b1\u85cf nm-applet\n\n\n\u57f7\u884c\n\n\n$ gsettings set org.gnome.nm-applet show-applet false\n\n\n\n\n\u986f\u793a nm-applet\n\n\n\u57f7\u884c\n\n\n$ gsettings set org.gnome.nm-applet show-applet true",
+            "title": "show or hide nm-applet "
+        },
+        {
+            "location": "/content/case/nm-applet/show-applet/#nm-applet",
+            "text": "$ gsettings list-recursively | grep nm-applet  \u986f\u793a  org.gnome.nm-applet stamp 0\norg.gnome.nm-applet disable-disconnected-notifications false\norg.gnome.nm-applet disable-vpn-notifications false\norg.gnome.nm-applet disable-connected-notifications false\norg.gnome.nm-applet suppress-wireless-networks-available false\norg.gnome.nm-applet show-applet true\norg.gnome.nm-applet disable-wifi-create false",
+            "title": "nm-applet"
+        },
+        {
+            "location": "/content/case/nm-applet/show-applet/#nm-applet_1",
+            "text": "\u57f7\u884c  $ gsettings set org.gnome.nm-applet show-applet false",
+            "title": "\u96b1\u85cf nm-applet"
+        },
+        {
+            "location": "/content/case/nm-applet/show-applet/#nm-applet_2",
+            "text": "\u57f7\u884c  $ gsettings set org.gnome.nm-applet show-applet true",
+            "title": "\u986f\u793a nm-applet"
         }
     ]
 }

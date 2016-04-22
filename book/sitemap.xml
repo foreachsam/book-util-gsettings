@@ -4,7 +4,7 @@
     
     <url>
      <loc>https://foreachsam.github.io/book-util-gsettings/book/</loc>
-     <lastmod>2016-04-21</lastmod>
+     <lastmod>2016-04-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -13,7 +13,7 @@
         
     <url>
      <loc>https://foreachsam.github.io/book-util-gsettings/book/content/referance/manual/</loc>
-     <lastmod>2016-04-21</lastmod>
+     <lastmod>2016-04-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -23,19 +23,19 @@
         
     <url>
      <loc>https://foreachsam.github.io/book-util-gsettings/book/content/deb-package/</loc>
-     <lastmod>2016-04-21</lastmod>
+     <lastmod>2016-04-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://foreachsam.github.io/book-util-gsettings/book/content/deb-package/libglib2.0-bin/</loc>
-     <lastmod>2016-04-21</lastmod>
+     <lastmod>2016-04-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://foreachsam.github.io/book-util-gsettings/book/content/deb-package/libglib2.0-doc/</loc>
-     <lastmod>2016-04-21</lastmod>
+     <lastmod>2016-04-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -45,7 +45,7 @@
         
     <url>
      <loc>https://foreachsam.github.io/book-util-gsettings/book/content/command/gsettings/</loc>
-     <lastmod>2016-04-21</lastmod>
+     <lastmod>2016-04-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -55,13 +55,13 @@
         
     <url>
      <loc>https://foreachsam.github.io/book-util-gsettings/book/content/concept/schema/</loc>
-     <lastmod>2016-04-21</lastmod>
+     <lastmod>2016-04-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://foreachsam.github.io/book-util-gsettings/book/content/concept/relocatable-schema/</loc>
-     <lastmod>2016-04-21</lastmod>
+     <lastmod>2016-04-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -71,7 +71,13 @@
         
     <url>
      <loc>https://foreachsam.github.io/book-util-gsettings/book/content/case/gedit/preferences-encodings/</loc>
-     <lastmod>2016-04-21</lastmod>
+     <lastmod>2016-04-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://foreachsam.github.io/book-util-gsettings/book/content/case/nm-applet/show-applet/</loc>
+     <lastmod>2016-04-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
