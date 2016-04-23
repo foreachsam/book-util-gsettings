@@ -9,19 +9,19 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     
       
-        <title>show or hide nm-applet  - Gsettings 使用筆記</title>
+        <title>pluma encodings - Gsettings 使用筆記</title>
       
       
       
-        <link rel="canonical" href="https://foreachsam.github.io/book-util-gsettings/book/content/case/nm-applet/show-applet/">
+        <link rel="canonical" href="https://foreachsam.github.io/book-util-gsettings/book/content/case/pluma/encodings/">
       
       
         <meta name="author" content="foreachsam">
       
     
-    <meta property="og:url" content="https://foreachsam.github.io/book-util-gsettings/book/content/case/nm-applet/show-applet/">
+    <meta property="og:url" content="https://foreachsam.github.io/book-util-gsettings/book/content/case/pluma/encodings/">
     <meta property="og:title" content="Gsettings 使用筆記">
-    <meta property="og:image" content="https://foreachsam.github.io/book-util-gsettings/book/content/case/nm-applet/show-applet//../../../../">
+    <meta property="og:image" content="https://foreachsam.github.io/book-util-gsettings/book/content/case/pluma/encodings//../../../../">
     <meta name="apple-mobile-web-app-title" content="Gsettings 使用筆記">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -97,7 +97,7 @@
             
           </span>
         
-        show or hide nm-applet 
+        pluma encodings
       </div>
     </div>
     
@@ -275,17 +275,8 @@
       
         
   <li>
-    <a class="" title="pluma encodings" href="../../pluma/encodings/">
+    <a class="current" title="pluma encodings" href="./">
       pluma encodings
-    </a>
-    
-  </li>
-
-      
-        
-  <li>
-    <a class="current" title="show or hide nm-applet " href="./">
-      show or hide nm-applet 
     </a>
     
       
@@ -295,25 +286,58 @@
         <ul>
           
             <li class="anchor">
-              <a title="Xubuntu 14.04" href="#xubuntu-1404">
-                Xubuntu 14.04
+              <a title="UbuntuMate 16.04" href="#ubuntumate-1604">
+                UbuntuMate 16.04
               </a>
             </li>
           
             <li class="anchor">
-              <a title="隱藏 nm-applet" href="#nm-applet_1">
-                隱藏 nm-applet
+              <a title="pluma 版本" href="#pluma">
+                pluma 版本
               </a>
             </li>
           
             <li class="anchor">
-              <a title="顯示 nm-applet" href="#nm-applet_2">
-                顯示 nm-applet
+              <a title="探索設定參數" href="#_1">
+                探索設定參數
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="設定開啟檔案可以辨識的編碼" href="#_2">
+                設定開啟檔案可以辨識的編碼
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="設定選單會顯示的編碼選項" href="#_3">
+                設定選單會顯示的編碼選項
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="還原到預設值" href="#_4">
+                還原到預設值
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="探索Schema檔" href="#schema">
+                探索Schema檔
               </a>
             </li>
           
         </ul>
       
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="show or hide nm-applet " href="../../nm-applet/show-applet/">
+      show or hide nm-applet 
+    </a>
     
   </li>
 
@@ -346,29 +370,83 @@
       <article class="article">
         <div class="wrapper">
           
-          <h1 id="nm-applet">nm-applet</h1>
-<h2 id="xubuntu-1404">Xubuntu 14.04</h2>
-<pre class="code"><code class="language-sh">$ gsettings list-recursively | grep nm-applet</code></pre>
+          <h1 id="pluma-encodings">pluma encodings</h1>
+<p>問：如何解決「pluma」開啟檔案，產生中文亂碼的情形？</p>
+<p>答：解決方法如下</p>
+<h2 id="ubuntumate-1604">UbuntuMate 16.04</h2>
+<h2 id="pluma">pluma 版本</h2>
+<pre class="code"><code class="language-sh">$ pluma --version</code></pre>
 
 
 <p>顯示</p>
-<pre class="code"><code>org.gnome.nm-applet stamp 0
-org.gnome.nm-applet disable-disconnected-notifications false
-org.gnome.nm-applet disable-vpn-notifications false
-org.gnome.nm-applet disable-connected-notifications false
-org.gnome.nm-applet suppress-wireless-networks-available false
-org.gnome.nm-applet show-applet true
-org.gnome.nm-applet disable-wifi-create false</code></pre>
+<pre class="code"><code>pluma - Version 1.12.2</code></pre>
 
 
-<h2 id="nm-applet_1">隱藏 nm-applet</h2>
+<h2 id="_1">探索設定參數</h2>
 <p>執行</p>
-<pre class="code"><code class="language-sh">$ gsettings set org.gnome.nm-applet show-applet false</code></pre>
+<pre class="code"><code class="language-sh">$ gsettings list-recursively | grep pluma | grep encodings</code></pre>
 
 
-<h2 id="nm-applet_2">顯示 nm-applet</h2>
+<p>顯示</p>
+<pre class="code"><code>org.mate.pluma shown-in-menu-encodings ['ISO-8859-15']
+org.mate.pluma auto-detected-encodings ['UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16']</code></pre>
+
+
+<h2 id="_2">設定開啟檔案可以辨識的編碼</h2>
+<pre class="code"><code class="language-sh">$ gsettings set org.mate.pluma auto-detected-encodings &quot;['UTF-8', 'BIG5', 'BIG5-HKSCS', 'EUC-TW', 'GB18030', 'GB2312', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16']&quot;</code></pre>
+
+
+<h2 id="_3">設定選單會顯示的編碼選項</h2>
+<pre class="code"><code class="language-sh">$ gsettings set org.mate.pluma shown-in-menu-encodings &quot;['UTF-8', 'BIG5', 'BIG5-HKSCS', 'EUC-TW', 'GB18030', 'GB2312', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16']&quot;</code></pre>
+
+
+<h2 id="_4">還原到預設值</h2>
 <p>執行</p>
-<pre class="code"><code class="language-sh">$ gsettings set org.gnome.nm-applet show-applet true</code></pre>
+<pre class="code"><code class="language-sh">gsettings reset org.mate.pluma auto-detected-encodings
+gsettings reset org.mate.pluma shown-in-menu-encodings</code></pre>
+
+
+<p>可以再次執行，觀看結果</p>
+<pre class="code"><code class="language-sh">$ gsettings list-recursively | grep pluma | grep encodings</code></pre>
+
+
+<h2 id="schema">探索Schema檔</h2>
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ grep auto-detected-encodings /usr/share/glib-2.0/schemas/* -R</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>Binary file /usr/share/glib-2.0/schemas/gschemas.compiled matches
+/usr/share/glib-2.0/schemas/org.mate.pluma.gschema.xml:    &lt;key name=&quot;auto-detected-encodings&quot; type=&quot;as&quot;&gt;</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ grep shown-in-menu-encodings /usr/share/glib-2.0/schemas/* -R</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>Binary file /usr/share/glib-2.0/schemas/gschemas.compiled matches
+/usr/share/glib-2.0/schemas/org.mate.pluma.gschema.xml:    &lt;key name=&quot;shown-in-menu-encodings&quot; type=&quot;as&quot;&gt;</code></pre>
+
+
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ dpkg -S /usr/share/glib-2.0/schemas/org.mate.pluma.gschema.xml</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>pluma-common: /usr/share/glib-2.0/schemas/org.mate.pluma.gschema.xml</code></pre>
+
+
+<p>也就是「/usr/share/glib-2.0/schemas/org.mate.pluma.gschema.xml」這個檔，是屬於「<a href="http://packages.ubuntu.com/xenial/pluma-common">pluma-common</a>」這個套件</p>
+<p>執行</p>
+<pre class="code"><code>$  dpkg -L pluma-common | grep schema</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>/usr/share/glib-2.0/schemas
+/usr/share/glib-2.0/schemas/org.mate.pluma.gschema.xml
+/usr/share/glib-2.0/schemas/org.mate.pluma.plugins.time.gschema.xml
+/usr/share/glib-2.0/schemas/org.mate.pluma.plugins.filebrowser.gschema.xml</code></pre>
           <aside class="copyright" role="note">
             
               Copyright (c) foreachsam &ndash;
@@ -387,7 +465,7 @@ org.gnome.nm-applet disable-wifi-create false</code></pre>
   <nav class="pagination" aria-label="Footer">
     <div class="previous">
       
-        <a href="../../pluma/encodings/" title="pluma encodings">
+        <a href="../../gedit/preferences-encodings/" title="gedit encodings">
           <span class="direction">
             上一頁
           </span>
@@ -397,7 +475,7 @@ org.gnome.nm-applet disable-wifi-create false</code></pre>
             </div>
             <div class="stretch">
               <div class="title">
-                pluma encodings
+                gedit encodings
               </div>
             </div>
           </div>
@@ -405,6 +483,22 @@ org.gnome.nm-applet disable-wifi-create false</code></pre>
       
     </div>
     <div class="next">
+      
+        <a href="../../nm-applet/show-applet/" title="show or hide nm-applet ">
+          <span class="direction">
+            下一頁
+          </span>
+          <div class="page">
+            <div class="stretch">
+              <div class="title">
+                show or hide nm-applet 
+              </div>
+            </div>
+            <div class="button button-next" role="button" aria-label="Next">
+              <i class="icon icon-forward"></i>
+            </div>
+          </div>
+        </a>
       
     </div>
   </nav>

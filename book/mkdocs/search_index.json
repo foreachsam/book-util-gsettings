@@ -281,14 +281,64 @@
             "title": "Xubuntu 14.04"
         },
         {
+            "location": "/content/case/pluma/encodings/",
+            "text": "pluma encodings\n\n\n\u554f\uff1a\u5982\u4f55\u89e3\u6c7a\u300cpluma\u300d\u958b\u555f\u6a94\u6848\uff0c\u7522\u751f\u4e2d\u6587\u4e82\u78bc\u7684\u60c5\u5f62\uff1f\n\n\n\u7b54\uff1a\u89e3\u6c7a\u65b9\u6cd5\u5982\u4e0b\n\n\nUbuntuMate 16.04\n\n\npluma \u7248\u672c\n\n\n$ pluma --version\n\n\n\n\n\u986f\u793a\n\n\npluma - Version 1.12.2\n\n\n\n\n\u63a2\u7d22\u8a2d\u5b9a\u53c3\u6578\n\n\n\u57f7\u884c\n\n\n$ gsettings list-recursively | grep pluma | grep encodings\n\n\n\n\n\u986f\u793a\n\n\norg.mate.pluma shown-in-menu-encodings ['ISO-8859-15']\norg.mate.pluma auto-detected-encodings ['UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16']\n\n\n\n\n\u8a2d\u5b9a\u958b\u555f\u6a94\u6848\u53ef\u4ee5\u8fa8\u8b58\u7684\u7de8\u78bc\n\n\n$ gsettings set org.mate.pluma auto-detected-encodings \n['UTF-8', 'BIG5', 'BIG5-HKSCS', 'EUC-TW', 'GB18030', 'GB2312', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16']\n\n\n\n\n\u8a2d\u5b9a\u9078\u55ae\u6703\u986f\u793a\u7684\u7de8\u78bc\u9078\u9805\n\n\n$ gsettings set org.mate.pluma shown-in-menu-encodings \n['UTF-8', 'BIG5', 'BIG5-HKSCS', 'EUC-TW', 'GB18030', 'GB2312', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16']\n\n\n\n\n\u9084\u539f\u5230\u9810\u8a2d\u503c\n\n\n\u57f7\u884c\n\n\ngsettings reset org.mate.pluma auto-detected-encodings\ngsettings reset org.mate.pluma shown-in-menu-encodings\n\n\n\n\n\u53ef\u4ee5\u518d\u6b21\u57f7\u884c\uff0c\u89c0\u770b\u7d50\u679c\n\n\n$ gsettings list-recursively | grep pluma | grep encodings\n\n\n\n\n\u63a2\u7d22Schema\u6a94\n\n\n\u57f7\u884c\n\n\n$ grep auto-detected-encodings /usr/share/glib-2.0/schemas/* -R\n\n\n\n\n\u986f\u793a\n\n\nBinary file /usr/share/glib-2.0/schemas/gschemas.compiled matches\n/usr/share/glib-2.0/schemas/org.mate.pluma.gschema.xml:    \nkey name=\nauto-detected-encodings\n type=\nas\n\n\n\n\n\u57f7\u884c\n\n\n$ grep shown-in-menu-encodings /usr/share/glib-2.0/schemas/* -R\n\n\n\n\n\u986f\u793a\n\n\nBinary file /usr/share/glib-2.0/schemas/gschemas.compiled matches\n/usr/share/glib-2.0/schemas/org.mate.pluma.gschema.xml:    \nkey name=\nshown-in-menu-encodings\n type=\nas\n\n\n\n\n\u57f7\u884c\n\n\n$ dpkg -S /usr/share/glib-2.0/schemas/org.mate.pluma.gschema.xml\n\n\n\n\n\u986f\u793a\n\n\npluma-common: /usr/share/glib-2.0/schemas/org.mate.pluma.gschema.xml\n\n\n\n\n\u4e5f\u5c31\u662f\u300c/usr/share/glib-2.0/schemas/org.mate.pluma.gschema.xml\u300d\u9019\u500b\u6a94\uff0c\u662f\u5c6c\u65bc\u300c\npluma-common\n\u300d\u9019\u500b\u5957\u4ef6\n\n\n\u57f7\u884c\n\n\n$  dpkg -L pluma-common | grep schema\n\n\n\n\n\u986f\u793a\n\n\n/usr/share/glib-2.0/schemas\n/usr/share/glib-2.0/schemas/org.mate.pluma.gschema.xml\n/usr/share/glib-2.0/schemas/org.mate.pluma.plugins.time.gschema.xml\n/usr/share/glib-2.0/schemas/org.mate.pluma.plugins.filebrowser.gschema.xml",
+            "title": "pluma encodings"
+        },
+        {
+            "location": "/content/case/pluma/encodings/#pluma-encodings",
+            "text": "\u554f\uff1a\u5982\u4f55\u89e3\u6c7a\u300cpluma\u300d\u958b\u555f\u6a94\u6848\uff0c\u7522\u751f\u4e2d\u6587\u4e82\u78bc\u7684\u60c5\u5f62\uff1f  \u7b54\uff1a\u89e3\u6c7a\u65b9\u6cd5\u5982\u4e0b",
+            "title": "pluma encodings"
+        },
+        {
+            "location": "/content/case/pluma/encodings/#ubuntumate-1604",
+            "text": "",
+            "title": "UbuntuMate 16.04"
+        },
+        {
+            "location": "/content/case/pluma/encodings/#pluma",
+            "text": "$ pluma --version  \u986f\u793a  pluma - Version 1.12.2",
+            "title": "pluma \u7248\u672c"
+        },
+        {
+            "location": "/content/case/pluma/encodings/#_1",
+            "text": "\u57f7\u884c  $ gsettings list-recursively | grep pluma | grep encodings  \u986f\u793a  org.mate.pluma shown-in-menu-encodings ['ISO-8859-15']\norg.mate.pluma auto-detected-encodings ['UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16']",
+            "title": "\u63a2\u7d22\u8a2d\u5b9a\u53c3\u6578"
+        },
+        {
+            "location": "/content/case/pluma/encodings/#_2",
+            "text": "$ gsettings set org.mate.pluma auto-detected-encodings  ['UTF-8', 'BIG5', 'BIG5-HKSCS', 'EUC-TW', 'GB18030', 'GB2312', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16']",
+            "title": "\u8a2d\u5b9a\u958b\u555f\u6a94\u6848\u53ef\u4ee5\u8fa8\u8b58\u7684\u7de8\u78bc"
+        },
+        {
+            "location": "/content/case/pluma/encodings/#_3",
+            "text": "$ gsettings set org.mate.pluma shown-in-menu-encodings  ['UTF-8', 'BIG5', 'BIG5-HKSCS', 'EUC-TW', 'GB18030', 'GB2312', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16']",
+            "title": "\u8a2d\u5b9a\u9078\u55ae\u6703\u986f\u793a\u7684\u7de8\u78bc\u9078\u9805"
+        },
+        {
+            "location": "/content/case/pluma/encodings/#_4",
+            "text": "\u57f7\u884c  gsettings reset org.mate.pluma auto-detected-encodings\ngsettings reset org.mate.pluma shown-in-menu-encodings  \u53ef\u4ee5\u518d\u6b21\u57f7\u884c\uff0c\u89c0\u770b\u7d50\u679c  $ gsettings list-recursively | grep pluma | grep encodings",
+            "title": "\u9084\u539f\u5230\u9810\u8a2d\u503c"
+        },
+        {
+            "location": "/content/case/pluma/encodings/#schema",
+            "text": "\u57f7\u884c  $ grep auto-detected-encodings /usr/share/glib-2.0/schemas/* -R  \u986f\u793a  Binary file /usr/share/glib-2.0/schemas/gschemas.compiled matches\n/usr/share/glib-2.0/schemas/org.mate.pluma.gschema.xml:     key name= auto-detected-encodings  type= as  \u57f7\u884c  $ grep shown-in-menu-encodings /usr/share/glib-2.0/schemas/* -R  \u986f\u793a  Binary file /usr/share/glib-2.0/schemas/gschemas.compiled matches\n/usr/share/glib-2.0/schemas/org.mate.pluma.gschema.xml:     key name= shown-in-menu-encodings  type= as  \u57f7\u884c  $ dpkg -S /usr/share/glib-2.0/schemas/org.mate.pluma.gschema.xml  \u986f\u793a  pluma-common: /usr/share/glib-2.0/schemas/org.mate.pluma.gschema.xml  \u4e5f\u5c31\u662f\u300c/usr/share/glib-2.0/schemas/org.mate.pluma.gschema.xml\u300d\u9019\u500b\u6a94\uff0c\u662f\u5c6c\u65bc\u300c pluma-common \u300d\u9019\u500b\u5957\u4ef6  \u57f7\u884c  $  dpkg -L pluma-common | grep schema  \u986f\u793a  /usr/share/glib-2.0/schemas\n/usr/share/glib-2.0/schemas/org.mate.pluma.gschema.xml\n/usr/share/glib-2.0/schemas/org.mate.pluma.plugins.time.gschema.xml\n/usr/share/glib-2.0/schemas/org.mate.pluma.plugins.filebrowser.gschema.xml",
+            "title": "\u63a2\u7d22Schema\u6a94"
+        },
+        {
             "location": "/content/case/nm-applet/show-applet/",
-            "text": "nm-applet\n\n\n$ gsettings list-recursively | grep nm-applet\n\n\n\n\n\u986f\u793a\n\n\norg.gnome.nm-applet stamp 0\norg.gnome.nm-applet disable-disconnected-notifications false\norg.gnome.nm-applet disable-vpn-notifications false\norg.gnome.nm-applet disable-connected-notifications false\norg.gnome.nm-applet suppress-wireless-networks-available false\norg.gnome.nm-applet show-applet true\norg.gnome.nm-applet disable-wifi-create false\n\n\n\n\n\u96b1\u85cf nm-applet\n\n\n\u57f7\u884c\n\n\n$ gsettings set org.gnome.nm-applet show-applet false\n\n\n\n\n\u986f\u793a nm-applet\n\n\n\u57f7\u884c\n\n\n$ gsettings set org.gnome.nm-applet show-applet true",
+            "text": "nm-applet\n\n\nXubuntu 14.04\n\n\n$ gsettings list-recursively | grep nm-applet\n\n\n\n\n\u986f\u793a\n\n\norg.gnome.nm-applet stamp 0\norg.gnome.nm-applet disable-disconnected-notifications false\norg.gnome.nm-applet disable-vpn-notifications false\norg.gnome.nm-applet disable-connected-notifications false\norg.gnome.nm-applet suppress-wireless-networks-available false\norg.gnome.nm-applet show-applet true\norg.gnome.nm-applet disable-wifi-create false\n\n\n\n\n\u96b1\u85cf nm-applet\n\n\n\u57f7\u884c\n\n\n$ gsettings set org.gnome.nm-applet show-applet false\n\n\n\n\n\u986f\u793a nm-applet\n\n\n\u57f7\u884c\n\n\n$ gsettings set org.gnome.nm-applet show-applet true",
             "title": "show or hide nm-applet "
         },
         {
             "location": "/content/case/nm-applet/show-applet/#nm-applet",
-            "text": "$ gsettings list-recursively | grep nm-applet  \u986f\u793a  org.gnome.nm-applet stamp 0\norg.gnome.nm-applet disable-disconnected-notifications false\norg.gnome.nm-applet disable-vpn-notifications false\norg.gnome.nm-applet disable-connected-notifications false\norg.gnome.nm-applet suppress-wireless-networks-available false\norg.gnome.nm-applet show-applet true\norg.gnome.nm-applet disable-wifi-create false",
+            "text": "",
             "title": "nm-applet"
+        },
+        {
+            "location": "/content/case/nm-applet/show-applet/#xubuntu-1404",
+            "text": "$ gsettings list-recursively | grep nm-applet  \u986f\u793a  org.gnome.nm-applet stamp 0\norg.gnome.nm-applet disable-disconnected-notifications false\norg.gnome.nm-applet disable-vpn-notifications false\norg.gnome.nm-applet disable-connected-notifications false\norg.gnome.nm-applet suppress-wireless-networks-available false\norg.gnome.nm-applet show-applet true\norg.gnome.nm-applet disable-wifi-create false",
+            "title": "Xubuntu 14.04"
         },
         {
             "location": "/content/case/nm-applet/show-applet/#nm-applet_1",
