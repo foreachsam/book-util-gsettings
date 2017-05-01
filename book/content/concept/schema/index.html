@@ -262,6 +262,14 @@
 		
 		<li class="anchor" >
 			<div itemscope itemtype="http://schema.org/Article">
+				<a title="範例檔" href="#_1" >
+                	範例檔
+				</a>
+			</div>
+		</li>
+		
+		<li class="anchor" >
+			<div itemscope itemtype="http://schema.org/Article">
 				<a title="產生 gschema.xml" href="#gschemaxml" >
                 	產生 gschema.xml
 				</a>
@@ -318,7 +326,7 @@
 		
 		<li class="anchor" >
 			<div itemscope itemtype="http://schema.org/Article">
-				<a title="相關檔案" href="#_1" >
+				<a title="相關檔案" href="#_2" >
                 	相關檔案
 				</a>
 			</div>
@@ -326,7 +334,7 @@
 		
 		<li class="anchor" >
 			<div itemscope itemtype="http://schema.org/Article">
-				<a title="小結" href="#_2" >
+				<a title="小結" href="#_3" >
                 	小結
 				</a>
 			</div>
@@ -425,6 +433,10 @@
 		<article class="article">
 			<div class="wrapper">
 				 <h1 id="schema">Schema</h1>
+<h2 id="_1">範例檔</h2>
+<ul>
+<li><a href="https://github.com/foreachsam/book-util-gsettings/tree/gh-pages/example/schema/schema">schema</a></li>
+</ul>
 <h2 id="gschemaxml">產生 gschema.xml</h2>
 <p>執行下面指令，產生「org.example.app-schema.gschema.xml」</p>
 <pre class="code"><code class="language-sh">cat &gt; org.example.app-schema.gschema.xml &lt;&lt;EOF
@@ -694,13 +706,13 @@ gsettings reset org.example.app-schema count</code></pre>
 
 
 <p>都沒有顯示任何結果，直接出現下一個提示字元。</p>
-<h2 id="_1">相關檔案</h2>
+<h2 id="_2">相關檔案</h2>
 <ul>
 <li>/usr/share/glib-2.0/schemas/org.example.app-schema.gschema.xml</li>
 <li>/usr/share/glib-2.0/schemas/gschemas.compiled</li>
 <li>~/.config/dconf/user</li>
 </ul>
-<h2 id="_2">小結</h2>
+<h2 id="_3">小結</h2>
 <p>從以上的實驗，我個人推測，歸納以下規則</p>
 <ul>
 <li>執行「gsettings get」，會先從「~/.config/dconf/user」這裡找資料，</li>

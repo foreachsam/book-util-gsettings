@@ -275,6 +275,14 @@
 		
 		<li class="anchor" >
 			<div itemscope itemtype="http://schema.org/Article">
+				<a title="範例檔" href="#_1" >
+                	範例檔
+				</a>
+			</div>
+		</li>
+		
+		<li class="anchor" >
+			<div itemscope itemtype="http://schema.org/Article">
 				<a title="產生 gschema.xml" href="#gschemaxml" >
                 	產生 gschema.xml
 				</a>
@@ -331,7 +339,7 @@
 		
 		<li class="anchor" >
 			<div itemscope itemtype="http://schema.org/Article">
-				<a title="相關檔案" href="#_1" >
+				<a title="相關檔案" href="#_2" >
                 	相關檔案
 				</a>
 			</div>
@@ -419,6 +427,10 @@
 				 <h1 id="relocatable-schema">Relocatable Schema</h1>
 <p>何謂「Relocatable Schema」，請參考「<a href="https://developer.gnome.org/gio/stable/GSettings.html">這一頁</a>」的裡面的一段說明。</p>
 <p>最簡單的辨別，就是「<code>&lt;schema&gt;</code>」沒有設定「<code>path=""</code>」，就會被視為「Relocatable Schema」。</p>
+<h2 id="_1">範例檔</h2>
+<ul>
+<li><a href="https://github.com/foreachsam/book-util-gsettings/tree/gh-pages/example/schema/relocatable_schema">relocatable_schema</a></li>
+</ul>
 <h2 id="gschemaxml">產生 gschema.xml</h2>
 <p>執行下面指令，產生「org.example.app-relocatable-schema.gschema.xml」</p>
 <pre class="code"><code class="language-sh">cat &gt; org.example.app-relocatable-schema.gschema.xml &lt;&lt;EOF
@@ -777,7 +789,7 @@ gsettings reset org.example.app-relocatable-schema:/org/example/app-relocatable-
 
 
 <p>沒有顯示任何結果，直接出現下一個提示字元。</p>
-<h2 id="_1">相關檔案</h2>
+<h2 id="_2">相關檔案</h2>
 <ul>
 <li>/usr/share/glib-2.0/schemas/org.example.app-relocatable-schema.gschema.xml</li>
 <li>/usr/share/glib-2.0/schemas/gschemas.compiled</li>
